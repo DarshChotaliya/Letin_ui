@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Orbitron:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Letin Solution — Enterprise AI, Cloud Infrastructure, Cyber Resilience, and Custom Software Engineering. Building industrial-grade digital ecosystems for global enterprises." />
+  <title>Letin Solution — Technology That Transforms</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    // Suppress external browser extension errors (MetaMask, etc.) to keep console clean
+    window.addEventListener('error', (e) => {
+      if (e.message?.includes('MetaMask') || e.filename?.includes('inpage.js')) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+      }
+    });
+    window.addEventListener('unhandledrejection', (e) => {
+      if (e.reason?.message?.includes('MetaMask') || e.reason?.stack?.includes('inpage.js')) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+      }
+    });
+  </script>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

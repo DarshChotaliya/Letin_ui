@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────── CSS Variables ─────────────── */
+:root {
+  --brand-dark: #02040a;
+  --brand-light: #ffffff;
+  --brand-surface: #f8fafc;
+  --brand-accent: #6366f1;
+  --brand-glow: #818cf8;
+  --brand-secondary: #8b5cf6;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--brand-light);
+    @apply text-slate-900 font-inter;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(99, 102, 241, 0.4);
+    color: #ffffff;
+  }
+}
+
+@layer components {
+
+  /* ── Light Theme Glass (Retained for specific uses if any) ── */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* ── Light Card (Premium Light style) ── */
+  .card-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  }
+
+  /* ── Dark Glass (Premium Void style) ── */
+  .glass-dark {
+    background: rgba(15, 23, 42, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  /* ── Text Effects ── */
+  .text-glow {
+    text-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
+  }
+
+  .text-glow-dark {
+    text-shadow: 0 0 60px rgba(99, 102, 241, 0.6);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.15),
+      0 0 80px rgba(99, 102, 241, 0.05);
+  }
+
+  .cinematic-heading {
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+  }
+
+  /* ── Button glow ── */
+  .btn-glow-premium {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.2),
+      0 2px 8px rgba(99, 102, 241, 0.1);
+  }
+
+  .btn-glow-premium:hover {
+    box-shadow: 0 12px 48px rgba(99, 102, 241, 0.4),
+      0 4px 12px rgba(99, 102, 241, 0.3);
+  }
+
+  .btn-glow-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s;
+  }
+
+  .btn-glow-premium:hover::before {
+    left: 100%;
+  }
+
+  /* ── Text Shimmer ── */
+  .text-shimmer {
+    background-image: linear-gradient(90deg,
+        currentColor 0%,
+        rgba(99, 102, 241, 0.8) 50%,
+        currentColor 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 8s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% center;
+    }
+
+    100% {
+      background-position: -200% center;
+    }
+  }
+
+  /* ── Background Grid ── */
+  .bg-grid {
+    background-image: linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* ── Animated Background Gradient (Premium Light) ── */
+  .bg-gradient-animate {
+    background: linear-gradient(-45deg, #ffffff, #f1f5f9, #ffffff, #f8fafc);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+  }
+
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-shimmer-fast {
+    animation: shimmer-fast 1.5s infinite;
+  }
+
+  @keyframes shimmer-fast {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+/* Scroll-to-top on route change */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* ─── Container ─── */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 100rem;
+  }
+}
