@@ -45,59 +45,63 @@ const Portfolio = () => {
     const [active, setActive] = useState(0);
 
     return (
-        <section id="portfolio" className="w-full py-24 md:py-40 px-6 md:px-12 relative bg-slate-50 overflow-hidden">
-            {/* Background Tech Grid */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+        <section id="portfolio" className="w-full py-24 md:py-48 px-6 md:px-12 relative bg-[#05070a] overflow-hidden">
+            {/* Background Narrative Fog */}
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-accent/[0.05] blur-[150px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-secondary/[0.03] blur-[130px] rounded-full pointer-events-none" />
 
             <div className="container relative z-10 mx-auto">
-                {/* Section Header */}
-                <div className="mb-20 md:mb-32 max-w-4xl">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <span className="text-brand-accent font-black tracking-[0.6em] text-[10px] md:text-xs uppercase block mb-6">
-                            Selected Deployments
-                        </span>
-                        <h2 className="cinematic-heading text-5xl md:text-7xl lg:text-8xl text-slate-900 leading-[0.9] tracking-tighter uppercase">
-                            Elite Case <br />
-                            <span className="text-brand-accent stroke-text-light">Studies.</span>
-                        </h2>
-                    </motion.div>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-32 items-end mb-24 md:mb-40">
+                    <div className="lg:col-span-8">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1 }}
+                        >
+                            <span className="text-brand-accent font-black tracking-[0.8em] text-[10px] md:text-xs uppercase block mb-8">
+                                Strategic Deployments
+                            </span>
+                            <h2 className="cinematic-heading text-5xl md:text-8xl lg:text-9xl text-white leading-[0.85] tracking-tighter uppercase">
+                                Elite Case <br />
+                                <span className="text-brand-accent">Studies.</span>
+                            </h2>
+                        </motion.div>
+                    </div>
+                    <div className="lg:col-span-4 pb-4">
+                        <p className="text-slate-500 text-lg md:text-2xl font-light leading-relaxed">
+                            A curated showcase of industrial-grade technical solutions delivered to global market leaders.
+                        </p>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-stretch">
-
                     {/* Navigation Sidebar */}
-                    <div className="lg:col-span-4 flex flex-col justify-center space-y-4">
+                    <div className="lg:col-span-4 flex flex-col justify-center space-y-6">
                         {projects.map((project, i) => (
                             <button
                                 key={project.id}
                                 onClick={() => setActive(i)}
-                                className={`group relative w-full text-left p-8 rounded-[2rem] transition-all duration-500 border ${active === i ? 'bg-white shadow-2xl border-brand-accent/20 scale-105' : 'bg-transparent border-transparent hover:bg-white/50 hover:border-slate-200'}`}
+                                className={`group relative w-full text-left p-10 rounded-[2.5rem] transition-all duration-700 border ${active === i ? 'bg-white/[0.03] border-brand-accent/30 shadow-2xl scale-[1.02]' : 'bg-transparent border-white/5 hover:bg-white/[0.01] hover:border-white/10'}`}
                             >
-                                <div className="flex justify-between items-center mb-4">
-                                    <span className={`text-[10px] font-black uppercase tracking-[0.3em] transition-colors ${active === i ? 'text-brand-accent' : 'text-slate-400 group-hover:text-slate-600'}`}>
-                                        0{i + 1}
+                                <div className="flex justify-between items-center mb-6">
+                                    <span className={`text-[10px] font-black uppercase tracking-[0.4em] transition-colors duration-500 ${active === i ? 'text-brand-accent' : 'text-slate-600 group-hover:text-slate-400'}`}>
+                                        Protocol 0{i + 1}
                                     </span>
                                     {active === i && (
-                                        <motion.div layoutId="active-dot" className="w-2 h-2 bg-brand-accent rounded-full animate-pulse" />
+                                        <motion.div layoutId="case-active" className="w-2 h-2 bg-brand-accent rounded-full shadow-[0_0_15px_rgba(99,102,241,1)]" />
                                     )}
                                 </div>
-                                <h3 className={`text-2xl font-orbitron font-black uppercase tracking-tight transition-colors ${active === i ? 'text-slate-900' : 'text-slate-400 group-hover:text-slate-800'}`}>
+                                <h3 className={`text-2xl font-orbitron font-black uppercase tracking-tight transition-colors duration-500 ${active === i ? 'text-white' : 'text-slate-500 group-hover:text-slate-300'}`}>
                                     {project.title}
                                 </h3>
-                                <div className={`overflow-hidden transition-all duration-500 ${active === i ? 'max-h-20 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                                    <p className="text-slate-500 text-sm font-light leading-relaxed">
+                                <div className={`overflow-hidden transition-all duration-700 ${active === i ? 'max-h-32 opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
+                                    <p className="text-slate-400 text-sm font-light leading-relaxed">
                                         {project.description}
                                     </p>
                                 </div>
                             </button>
                         ))}
-
-
                     </div>
 
                     {/* Immersive Preview Card */}
@@ -105,71 +109,63 @@ const Portfolio = () => {
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={active}
-                                initial={{ opacity: 0, x: 20, scale: 0.98 }}
-                                animate={{ opacity: 1, x: 0, scale: 1 }}
-                                exit={{ opacity: 0, x: -20, scale: 0.98 }}
-                                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                                className="relative h-[600px] md:h-[700px] w-full rounded-[3rem] overflow-hidden shadow-2xl group border border-slate-200 bg-white"
+                                initial={{ opacity: 0, filter: "blur(20px)", scale: 0.98 }}
+                                animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+                                exit={{ opacity: 0, filter: "blur(20px)", scale: 1.02 }}
+                                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                                className="relative h-[600px] md:h-[800px] w-full rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] group border border-white/10"
                             >
-                                {/* Active Image */}
                                 <img
                                     src={projects[active].image}
                                     alt={projects[active].title}
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
+                                <div className="absolute inset-0 bg-slate-900/40 mix-blend-overlay" />
 
                                 {/* Floating Details */}
-                                <div className="absolute bottom-0 left-0 w-full p-8 md:p-12">
-                                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-
-                                        <div className="space-y-6 max-w-xl">
-                                            <div className="flex items-center gap-4">
-                                                <div className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/10">
-                                                    <span className="text-white text-[10px] font-black uppercase tracking-[0.3em]">
+                                <div className="absolute bottom-0 left-0 w-full p-12 md:p-20">
+                                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
+                                        <div className="space-y-8 max-w-2xl">
+                                            <div className="flex items-center gap-6">
+                                                <div className="px-6 py-2 bg-white/5 backdrop-blur-xl rounded-full border border-white/10">
+                                                    <span className="text-white text-[9px] font-black uppercase tracking-[0.4em]">
                                                         {projects[active].client}
                                                     </span>
                                                 </div>
-                                                <div className="h-px w-12 bg-white/20" />
-                                                <span className="text-brand-accent/80 text-[10px] font-black uppercase tracking-[0.3em]">
+                                                <div className="h-px w-10 bg-brand-accent/30" />
+                                                <span className="text-brand-accent font-black text-[9px] uppercase tracking-[0.4em]">
                                                     {projects[active].category}
                                                 </span>
                                             </div>
-                                            <h3 className="text-4xl md:text-5xl font-orbitron font-black text-white uppercase leading-tight">
+                                            <h3 className="text-4xl md:text-6xl font-orbitron font-black text-white uppercase leading-[0.9] tracking-tighter">
                                                 {projects[active].title}
                                             </h3>
                                         </div>
 
-                                        {/* Stats Grid */}
-                                        <div className="grid grid-cols-2 gap-4">
+                                        <div className="grid grid-cols-2 gap-6 md:gap-8">
                                             {projects[active].stats.map((stat, idx) => (
-                                                <div key={idx} className="p-5 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
-                                                    <p className="text-2xl md:text-3xl font-orbitron font-black text-brand-accent mb-1">
+                                                <div key={idx} className="p-8 bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 group-hover:bg-brand-accent/10 transition-colors duration-500">
+                                                    <p className="text-2xl md:text-4xl font-orbitron font-black text-brand-accent mb-2">
                                                         {stat.value}
                                                     </p>
-                                                    <p className="text-slate-400 text-[10px] uppercase font-bold tracking-widest">
+                                                    <p className="text-slate-500 text-[9px] uppercase font-black tracking-[0.3em]">
                                                         {stat.label}
                                                     </p>
                                                 </div>
                                             ))}
                                         </div>
-
                                     </div>
                                 </div>
 
-                                {/* Tech Decoration */}
-                                <div className="absolute top-8 right-8 text-white/20">
-                                    <Cpu size={48} strokeWidth={1} />
+                                <div className="absolute top-12 right-12 text-white/10 group-hover:text-brand-accent/20 transition-colors duration-1000">
+                                    <Cpu size={64} strokeWidth={1} />
                                 </div>
                             </motion.div>
                         </AnimatePresence>
                     </div>
-
                 </div>
             </div>
-
-            {/* Ambient Glows */}
-            <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-brand-accent/[0.03] blur-[200px] rounded-full pointer-events-none" />
         </section>
     );
 };

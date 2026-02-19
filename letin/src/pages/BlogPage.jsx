@@ -47,78 +47,107 @@ const posts = [
 
 const BlogPage = () => {
     return (
-        <div className="pt-32 pb-20 relative">
+        <div className="pt-40 pb-32 relative bg-[#fbfbfd] min-h-screen overflow-hidden">
+            {/* Ambient Lighting */}
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-accent/[0.03] blur-[150px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-secondary/[0.02] blur-[120px] rounded-full pointer-events-none" />
+
             {/* Hero */}
-            <section className="container px-4 md:px-6 mb-20 md:mb-32">
-                <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-center max-w-5xl mx-auto">
-                    <span className="text-brand-accent font-black tracking-[0.5em] text-[10px] md:text-xs uppercase mb-6 block">Blog & Insights</span>
-                    <h1 className="cinematic-heading text-4xl md:text-6xl lg:text-7xl text-slate-800 mb-8 uppercase tracking-tighter">
-                        Tech <span className="text-brand-accent">Insights</span>
+            <section className="container px-6 md:px-12 mb-32 md:mb-56 relative z-10 mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ type: "spring", stiffness: 40, damping: 20 }}
+                    className="max-w-6xl"
+                >
+                    <span className="text-brand-accent font-black tracking-[0.6em] text-[10px] md:text-xs uppercase mb-8 block">Intelligence Feed</span>
+                    <h1 className="cinematic-heading text-5xl md:text-8xl lg:text-9xl text-slate-900 leading-[0.9] mb-12 uppercase tracking-tighter">
+                        Strategic <br />
+                        <span className="text-brand-accent">Insights.</span>
                     </h1>
-                    <p className="text-slate-500 text-lg md:text-2xl font-light leading-relaxed max-w-3xl mx-auto">
-                        Deep dives into enterprise technology, architecture patterns, and industry trends.
+                    <p className="text-slate-500 text-xl md:text-3xl font-light leading-relaxed max-w-4xl">
+                        Deep dives into the technical paradigms and strategic shifts
+                        defining the next era of global enterprise technology.
                     </p>
                 </motion.div>
             </section>
 
-            {/* Featured Post */}
-            <section className="container px-4 md:px-6 mb-16 mx-auto">
+            {/* Featured Post - The Editorial Showcase */}
+            <section className="container px-6 md:px-12 mb-24 mx-auto relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="card-light rounded-[3rem] overflow-hidden group cursor-pointer bg-white border border-slate-100 hover:shadow-2xl hover:border-brand-accent/20 transition-all duration-700 shadow-xl"
+                    className="p-1 rounded-[4rem] bg-gradient-to-br from-slate-100 to-transparent shadow-[0_60px_120px_-30px_rgba(0,0,0,0.05)]"
                 >
-                    <div className="grid md:grid-cols-2">
-                        <div className="relative h-64 md:h-auto overflow-hidden">
-                            <img src={featuredPost.image} alt={featuredPost.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
-                            <span className="absolute top-8 left-8 bg-brand-accent text-white text-[10px] font-black uppercase tracking-widest px-6 py-2 rounded-full shadow-lg">Featured Article</span>
-                        </div>
-                        <div className="p-10 md:p-20 flex flex-col justify-center">
-                            <span className="text-brand-accent font-black text-xs uppercase tracking-[0.3em] mb-6">{featuredPost.category}</span>
-                            <h2 className="font-orbitron font-black text-2xl md:text-3xl lg:text-4xl text-slate-900 mb-6 uppercase tracking-tight leading-tight group-hover:text-brand-accent transition-colors duration-500">{featuredPost.title}</h2>
-                            <p className="text-slate-500 mb-10 text-lg leading-relaxed font-light">{featuredPost.excerpt}</p>
-                            <div className="flex items-center gap-6 text-slate-400 text-xs font-bold uppercase tracking-widest">
-                                <span>{featuredPost.author}</span>
-                                <span className="text-slate-200">/</span>
-                                <span className="flex items-center gap-2"><Clock size={14} /> {featuredPost.readTime}</span>
+                    <div className="bg-white rounded-[3.8rem] overflow-hidden group cursor-pointer">
+                        <div className="grid lg:grid-cols-2">
+                            <div className="relative h-80 lg:h-auto overflow-hidden">
+                                <img src={featuredPost.image} alt={featuredPost.title} className="w-full h-full object-cover group-hover:scale-105 transition-all duration-[2s]" />
+                                <div className="absolute inset-0 bg-slate-900/5 transition-opacity group-hover:opacity-0" />
+                                <div className="absolute top-10 left-10">
+                                    <span className="bg-slate-950 text-white text-[9px] font-black uppercase tracking-[0.3em] px-8 py-4 rounded-2xl shadow-2xl">
+                                        Primary Briefing
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="p-12 md:p-24 flex flex-col justify-center">
+                                <div className="flex items-center gap-4 mb-8">
+                                    <div className="w-12 h-[2px] bg-brand-accent/40" />
+                                    <span className="text-brand-accent font-black text-[10px] uppercase tracking-[0.4em]">{featuredPost.category}</span>
+                                </div>
+                                <h2 className="font-orbitron font-black text-3xl md:text-5xl lg:text-6xl text-slate-900 mb-10 uppercase tracking-tighter leading-[0.9] group-hover:text-brand-accent transition-colors">
+                                    {featuredPost.title}
+                                </h2>
+                                <p className="text-slate-500 mb-12 text-lg md:text-xl leading-relaxed font-light">{featuredPost.excerpt}</p>
+                                <div className="flex items-center justify-between pt-10 border-t border-slate-50">
+                                    <div className="flex items-center gap-10 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">
+                                        <span className="text-slate-900">{featuredPost.author}</span>
+                                        <span className="flex items-center gap-3"><Clock size={16} className="text-brand-accent" /> {featuredPost.readTime}</span>
+                                    </div>
+                                    <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-brand-accent group-hover:text-white group-hover:shadow-2xl transition-all duration-500">
+                                        <ArrowRight size={24} />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </motion.div>
             </section>
 
-            {/* Posts Grid */}
-            <section className="container px-4 md:px-6 mx-auto">
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Posts Grid - Architectural Briefs */}
+            <section className="container px-6 md:px-12 mx-auto relative z-10">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
                     {posts.map((post, i) => (
                         <motion.article
                             key={i}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.05 }}
-                            className="card-light p-10 rounded-[2.5rem] cursor-pointer group bg-white border border-slate-100 hover:shadow-2xl hover:border-brand-accent/20 transition-all duration-700 hover:-translate-y-2 shadow-lg"
+                            transition={{ delay: i * 0.1 }}
+                            className="bg-white p-12 rounded-[3.5rem] border border-slate-100 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] transition-all duration-700 group cursor-pointer flex flex-col"
                         >
-                            <span className="text-brand-accent font-black text-[10px] uppercase tracking-[0.3em] mb-6 block">{post.category}</span>
-                            <h3 className="font-orbitron font-black text-lg text-slate-900 mb-6 uppercase tracking-tight group-hover:text-brand-accent transition-colors duration-500 leading-tight">{post.title}</h3>
-                            <p className="text-slate-500 text-sm mb-10 leading-relaxed font-light">{post.excerpt}</p>
-                            <div className="flex items-center justify-between pt-6 border-t border-slate-50">
-                                <div className="flex items-center gap-4 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="w-6 h-[2px] bg-brand-accent/20" />
+                                <span className="text-brand-accent font-black text-[9px] uppercase tracking-[0.3em]">{post.category}</span>
+                            </div>
+                            <h3 className="font-orbitron font-black text-xl text-slate-900 mb-8 uppercase tracking-tighter leading-tight group-hover:text-brand-accent transition-colors flex-grow">
+                                {post.title}
+                            </h3>
+                            <p className="text-slate-500 text-sm mb-12 leading-relaxed font-light line-clamp-3">{post.excerpt}</p>
+                            <div className="flex items-center justify-between pt-8 border-t border-slate-50">
+                                <div className="flex items-center gap-6 text-slate-400 text-[9px] font-black uppercase tracking-[0.15em]">
                                     <span>{post.date}</span>
-                                    <span className="flex items-center gap-2"><Clock size={12} /> {post.readTime}</span>
+                                    <span className="flex items-center gap-2"><Clock size={14} className="opacity-50" /> {post.readTime}</span>
                                 </div>
                                 <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-brand-accent group-hover:text-white transition-all duration-500">
-                                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                                 </div>
                             </div>
                         </motion.article>
                     ))}
                 </div>
             </section>
-
-            {/* Background Glows */}
-            <div className="fixed top-1/4 right-0 w-[400px] h-[400px] bg-brand-secondary/5 blur-[150px] rounded-full -z-10 pointer-events-none" />
         </div>
     );
 };

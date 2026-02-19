@@ -30,7 +30,7 @@ const Footer = () => {
                     <div className="lg:col-span-2 lg:ml-auto">
                         <h4 className="font-orbitron font-black text-xs uppercase tracking-[.3em] text-slate-900 mb-10">Company</h4>
                         <ul className="space-y-5">
-                            {[{ label: 'About Us', to: '/about' }, { label: 'Services', to: '/services' }, { label: 'Portfolio', to: '/portfolio' }, { label: 'Blog', to: '/blog' }, { label: 'Contact', to: '/contact' }].map((link) => (
+                            {[{ label: 'About Us', to: '/about' }, { label: 'Services', to: '/services' }, { label: 'Portfolio', to: '/portfolio' }, { label: 'Careers', to: '/careers' }, { label: 'Blog', to: '/blog' }, { label: 'Contact', to: '/contact' }].map((link) => (
                                 <li key={link.label}>
                                     <Link to={link.to} className="text-slate-500 hover:text-brand-accent transition-all duration-300 text-sm flex items-center gap-3 group">
                                         <span className="w-1.5 h-1.5 rounded-full bg-slate-200 transition-all group-hover:bg-brand-accent group-hover:scale-125" />

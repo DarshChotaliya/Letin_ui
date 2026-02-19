@@ -95,7 +95,7 @@ const AtmosphereShader = {
 };
 
 /* ─────────────────── Background Data Field ─────────────────── */
-function DigitalDataField({ count = 2000 }) {
+function DigitalDataField({ count = 1200 }) {
     const mesh = useRef();
     const { positions, speeds } = useMemo(() => {
         const pos = new Float32Array(count * 3);
@@ -282,25 +282,6 @@ function SpaceScene({ mouse }) {
     );
 }
 
-/* ─────────────────── Custom Cursor ─────────────────── */
-function CustomCursor() {
-    const cursorRef = useRef(null);
-    useEffect(() => {
-        const move = (e) => {
-            const { clientX, clientY } = e;
-            if (cursorRef.current) {
-                cursorRef.current.animate({ transform: `translate3d(${clientX}px, ${clientY}px, 0)` }, { duration: 150, fill: "forwards" });
-            }
-        };
-        window.addEventListener('mousemove', move);
-        return () => window.removeEventListener('mousemove', move);
-    }, []);
-    return (
-        <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
-            <div ref={cursorRef} className="absolute top-0 left-0 w-5 h-5 bg-blue-500 rounded-full -ml-2.5 -mt-2.5 shadow-[0_0_15px_rgba(59,130,246,0.6)]" />
-        </div>
-    );
-}
 
 /* ─────────────────── Main Hero Component ─────────────────── */
 const Hero = () => {
@@ -326,8 +307,8 @@ const Hero = () => {
     const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
     return (
-        <section className="w-full relative h-screen flex items-center justify-center overflow-hidden bg-[#02040a] cursor-none">
-            <CustomCursor />
+        <section className="w-full relative h-screen flex items-center justify-center overflow-hidden bg-[#02040a]">
+
             <div className="absolute inset-0 z-0">
                 <Canvas camera={{ position: [0, 0, 8], fov: 50, near: 0.1, far: 100 }} dpr={[1, 1]} gl={{ antialias: true, stencil: false, depth: true, alpha: false, powerPreference: 'default' }}>
                     <Suspense fallback={null}>
@@ -337,29 +318,41 @@ const Hero = () => {
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#02040a] via-transparent to-[#02040a]/30 z-10 pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#02040a]/20 via-transparent to-[#02040a]/20 z-10 pointer-events-none" />
-            <div className="container mx-auto px-4 md:px-6 relative z-50 text-center pt-24 md:pt-40">
+            <div className="container mx-auto px-4 md:px-6 relative z-50 text-center pt-16 md:pt-24">
                 <AnimatePresence mode="wait">
-                    <motion.div key={currentSlide} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1.5 }} className="flex flex-col items-center">
+                    <motion.div
+                        key={currentSlide}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ type: "spring", stiffness: 40, damping: 20 }}
+                        className="flex flex-col items-center"
+                    >
 
                         {/* Subtitle - Emerging from distance */}
                         <motion.div
                             initial={{ opacity: 0, y: 50, scale: 0.8 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
-                            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-                            className="bg-brand-accent/10 px-6 py-2 rounded-full mb-8 flex items-center gap-3 backdrop-blur-md border border-brand-accent/20"
+                            transition={{ type: "spring", stiffness: 50, damping: 15, delay: 0.1 }}
+                            className="bg-brand-accent/10 px-6 py-2 rounded-full mb-6 flex items-center gap-3 backdrop-blur-md border border-brand-accent/20"
                         >
                             <div className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse shadow-glow" />
                             <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-brand-accent/90">{slides[currentSlide].subtitle}</span>
                         </motion.div>
 
-                        {/* Title - "Emerging from Earth" Effect (Scale + Blur + Y-axis) */}
-                        <h1 className="cinematic-heading text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6 max-w-6xl mx-auto px-4 uppercase tracking-tight drop-shadow-lg perspective-1000">
+                        {/* Title - Organic Spring Emergence */}
+                        <h1 className="cinematic-heading text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-5 max-w-6xl mx-auto px-4 uppercase tracking-tight drop-shadow-lg perspective-1000">
                             {slides[currentSlide].title.split(" ").map((word, i) => (
                                 <motion.span
                                     key={i}
-                                    initial={{ opacity: 0, scale: 0.4, y: 100, filter: "blur(20px)" }}
+                                    initial={{ opacity: 0, scale: 0.8, y: 40, filter: "blur(10px)" }}
                                     animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
-                                    transition={{ duration: 1.2, delay: 0.5 + (i * 0.05), ease: [0.22, 1, 0.36, 1] }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 60,
+                                        damping: 20,
+                                        delay: 0.2 + (i * 0.02)
+                                    }}
                                     className="inline-block mr-[0.25em] hover:text-brand-accent transition-colors duration-300 cursor-default text-shimmer"
                                 >
                                     {word}
@@ -367,22 +360,22 @@ const Hero = () => {
                             ))}
                         </h1>
 
-                        {/* Description - Floating up from planet */}
+                        {/* Description - Smooth Float */}
                         <motion.p
-                            initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+                            initial={{ opacity: 0, y: 30, filter: "blur(5px)" }}
                             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                            transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
-                            className="text-slate-300 font-inter font-light text-sm md:text-lg lg:text-xl mb-10 max-w-3xl px-4 leading-relaxed tracking-wide"
+                            transition={{ type: "spring", stiffness: 45, damping: 18, delay: 0.5 }}
+                            className="text-slate-300 font-inter font-light text-sm md:text-lg lg:text-xl mb-8 max-w-3xl px-4 leading-relaxed tracking-wide"
                         >
                             {slides[currentSlide].highlight}
                         </motion.p>
 
-                        {/* Stats - Staggered emergence */}
+                        {/* Stats - Quick Spring Stagger */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            initial={{ opacity: 0, scale: 0.95, y: 15 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 1.5 }}
-                            className="flex flex-wrap justify-center gap-4 mb-10"
+                            transition={{ type: "spring", stiffness: 70, damping: 20, delay: 0.7 }}
+                            className="flex flex-wrap justify-center gap-4 mb-8"
                         >
                             {slides[currentSlide].stats.map((stat, i) => (
                                 <div key={i} className="flex items-center gap-3 px-5 py-3 bg-white/5 rounded-2xl transition-all group cursor-default border border-white/10 hover:bg-white/10 hover:shadow-lg backdrop-blur-sm">
@@ -395,12 +388,12 @@ const Hero = () => {
                             ))}
                         </motion.div>
 
-                        {/* Buttons - Final elements to lock in */}
+                        {/* Buttons - Final Pop */}
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 1.8 }}
-                            className="flex flex-col sm:flex-row gap-6 md:gap-8 items-center mt-12 md:mt-16"
+                            transition={{ type: "spring", stiffness: 60, damping: 15, delay: 0.9 }}
+                            className="flex flex-col sm:flex-row gap-4 md:gap-6 items-center mt-4 md:mt-8"
                         >
                             <button className="bg-[#6366f1] text-white px-10 py-5 md:px-14 md:py-6 rounded-full font-black text-sm md:text-base uppercase tracking-[0.3em] hover:bg-[#4f46e5] hover:scale-105 transition-all duration-300 shadow-[0_20px_50px_rgba(99,102,241,0.6)] flex items-center gap-4">
                                 {slides[currentSlide].cta}

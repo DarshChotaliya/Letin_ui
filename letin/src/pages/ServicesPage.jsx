@@ -1,172 +1,245 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Globe, Cpu, Zap, ChevronRight, Cloud, Database, Brain, Lock, Settings } from 'lucide-react';
+import { X, ArrowRight } from 'lucide-react';
 
-const services = [
+const allSolutions = [
     {
-        icon: <Brain size={32} />, title: "Enterprise AI", tagline: "Neural Intelligence at Scale",
-        desc: "Custom AI/ML solutions that automate complex decision-making, predict market trends, and unlock data-driven insights across your organization.",
-        features: ["Predictive Analytics", "NLP Pipelines", "Computer Vision", "Recommendation Engines"],
-        stats: [{ label: "Accuracy", value: "99.2%" }, { label: "Speed", value: "10x faster" }]
+        id: 'cms',
+        category: 'CMS Development',
+        title: "CMS Development",
+        desc: "Build better with Letin Solution. We deliver flexible Headless CMS solutions for seamless omnichannel publishing, high data integrity, and smarter workflows.",
+        illustration: (
+            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <rect x="40" y="20" width="120" height="80" rx="8" />
+                <path d="M40 40h120M70 20v80M40 70h30" />
+                <circle cx="100" cy="60" r="10" />
+                <path d="M120 50l10 10-10 10" />
+            </svg>
+        )
     },
     {
-        icon: <Cloud size={32} />, title: "Cloud Architecture", tagline: "Infinite Scalability",
-        desc: "Design and deploy cloud-native microservices architectures that handle millions of requests while maintaining zero downtime.",
-        features: ["Multi-Cloud Strategy", "Kubernetes Orchestration", "Serverless Computing", "Edge Deployment"],
-        stats: [{ label: "Uptime", value: "99.99%" }, { label: "Scale", value: "10M+ RPS" }]
+        id: 'erp',
+        category: 'ERP Services',
+        title: "ERP Services",
+        desc: "Letin Solution provides ERP Services for integrated business management. We offer Odoo implementation, customization, and support to unify data, streamline workflows, and ensure stability.",
+        illustration: (
+            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M100 20l60 30-60 30-60-30z" />
+                <path d="M40 50v30l60 30 60-30V50" />
+                <path d="M100 80v30" />
+                <circle cx="100" cy="50" r="5" fill="currentColor" />
+            </svg>
+        )
     },
     {
-        icon: <Globe size={32} />, title: "Web Platforms", tagline: "Digital Experiences",
-        desc: "Full-stack web applications built with modern frameworks, delivering blazing-fast performance and exceptional user experiences.",
-        features: ["React/Next.js", "Progressive Web Apps", "Real-time Systems", "API Development"],
-        stats: [{ label: "Performance", value: "98/100" }, { label: "Load", value: "<1s" }]
+        id: 'ai-ml',
+        category: 'Artificial Intelligence & Machine Learning',
+        title: "Artificial Intelligence & Machine Learning",
+        desc: "Artificial Intelligence & Machine Learning systems mimic human intelligence for tasks like decision-making and pattern recognition. Letin Solution provides AI solutions for business, enabling predictive modeling and automation.",
+        illustration: (
+            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <circle cx="100" cy="60" r="30" />
+                <path d="M100 30v60M70 60h60" />
+                <path d="M80 40l40 40M80 80l40-40" />
+                <circle cx="100" cy="60" r="15" className="animate-pulse" />
+            </svg>
+        )
     },
     {
-        icon: <Lock size={32} />, title: "Cyber Security", tagline: "Zero Trust Defense",
-        desc: "Comprehensive security solutions including penetration testing, SIEM implementation, and quantum-safe encryption protocols.",
-        features: ["Threat Intelligence", "Zero Trust Architecture", "SOC Setup", "Compliance Automation"],
-        stats: [{ label: "Threats Blocked", value: "1M+/day" }, { label: "Standard", value: "ISO 27001" }]
+        id: 'automation',
+        category: 'Automation & Integration',
+        title: "Automation & Integration",
+        desc: "Our solutions streamline business operations. We implement automated workflows and integrate systems for seamless data flow, reducing manual effort and driving efficiency.",
+        illustration: (
+            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <circle cx="70" cy="60" r="20" />
+                <circle cx="130" cy="60" r="20" />
+                <path d="M90 60h40" />
+                <path d="M70 40v40M130 40v40" />
+                <path d="M50 60l10 10 10-10" />
+            </svg>
+        )
     },
     {
-        icon: <Database size={32} />, title: "Data Engineering", tagline: "Data at Scale",
-        desc: "Build robust data pipelines, lakes, and warehouses that transform raw data into actionable business intelligence.",
-        features: ["ETL Pipelines", "Data Lakes", "Real-time Streaming", "BI Dashboards"],
-        stats: [{ label: "Data Processed", value: "50TB+/day" }, { label: "Latency", value: "<100ms" }]
+        id: 'mvp',
+        category: 'MVP Development',
+        title: "MVP Development",
+        desc: "Letin Solution MVP development focuses on building core product features quickly. We help startups launch faster, test ideas with real users, and refine their strategy based on direct feedback.",
+        illustration: (
+            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M100 20l20 60h-40z" />
+                <path d="M80 80h40v20h-40z" />
+                <path d="M70 50l-30 30M130 50l30 30" />
+            </svg>
+        )
     },
     {
-        icon: <Settings size={32} />, title: "DevOps & SRE", tagline: "Operational Excellence",
-        desc: "Implement CI/CD pipelines, infrastructure as code, and observability stacks that accelerate delivery and ensure reliability.",
-        features: ["CI/CD Automation", "Infrastructure as Code", "Monitoring & Alerting", "Chaos Engineering"],
-        stats: [{ label: "Deploy Freq", value: "50x/day" }, { label: "MTTR", value: "<5min" }]
-    },
+        id: 'gen-ai',
+        category: 'Generative AI',
+        title: "Generative AI",
+        desc: "Generative AI transforms complex data into actionable outputs. We leverage LLMs and neural networks to create custom AI agents that enhance productivity and creative workflows.",
+        illustration: (
+            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M60 40c20-20 60-20 80 0v40c-20 20-60 20-80 0z" />
+                <path d="M80 60h40M80 70h40M80 50h20" />
+                <circle cx="140" cy="30" r="5" fill="currentColor" />
+            </svg>
+        )
+    }
+];
+
+const categories = [
+    'All', 'CMS Development', 'ERP Services', 'Artificial Intelligence & Machine Learning',
+    'Automation & Integration', 'MVP Development', 'Generative AI', 'Software Testing',
+    'Mobile Application Development', 'Managed IT Services', 'Enterprise Software Development',
+    'Cloud and Infrastructure Services'
 ];
 
 const ServicesPage = () => {
-    const [activeService, setActiveService] = useState(0);
+    const [filter, setFilter] = useState('All');
+    const [selectedSolution, setSelectedSolution] = useState(null);
+
+    const filteredSolutions = filter === 'All'
+        ? allSolutions
+        : allSolutions.filter(s => s.category.includes(filter) || s.title.includes(filter));
 
     return (
-        <div className="pt-32 pb-20 relative">
-            {/* Hero */}
-            <section className="container px-4 md:px-6 mb-20 md:mb-32">
-                <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-center max-w-5xl mx-auto">
-                    <span className="text-brand-accent font-black tracking-[0.5em] text-[10px] md:text-xs uppercase mb-6 block">What We Do</span>
-                    <h1 className="cinematic-heading text-4xl md:text-6xl lg:text-7xl text-slate-800 mb-8 uppercase tracking-tighter">
-                        World-Class <span className="text-brand-accent">Solutions</span>
-                    </h1>
-                    <p className="text-slate-500 text-lg md:text-2xl font-light leading-relaxed max-w-3xl mx-auto">
-                        We deliver enterprise-grade technology services that drive transformation and competitive advantage.
-                    </p>
-                </motion.div>
-            </section>
+        <div className="bg-[#fbfcff] min-h-screen font-inter select-none">
+            {/* Modal for Details */}
+            <AnimatePresence>
+                {selectedSolution && (
+                    <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setSelectedSolution(null)}
+                            className="absolute inset-0 bg-slate-900/40 backdrop-blur-md"
+                        />
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.9, y: 30 }}
+                            className="relative bg-white rounded-[4rem] p-10 md:p-20 max-w-4xl w-full shadow-2xl border border-white/20 overflow-hidden"
+                        >
+                            <button
+                                onClick={() => setSelectedSolution(null)}
+                                className="absolute top-10 right-10 p-4 rounded-full bg-slate-50 text-slate-400 hover:text-slate-900 transition-all hover:rotate-90"
+                            >
+                                <X size={24} />
+                            </button>
 
-            {/* Services Grid + Detail */}
-            <section className="container px-4 md:px-6 mb-20 md:mb-32 mx-auto">
-                <div className="grid lg:grid-cols-12 gap-12">
-                    {/* Service Cards */}
-                    <div className="lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-6">
-                        {services.map((service, i) => (
-                            <motion.button
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.05 }}
-                                onClick={() => setActiveService(i)}
-                                className={`p-8 rounded-[2rem] text-left transition-all duration-700 group relative overflow-hidden ${activeService === i
-                                    ? 'bg-white border-brand-accent/40 shadow-2xl scale-[1.02] border'
-                                    : 'bg-white/50 border border-slate-100 hover:bg-white hover:shadow-xl hover:border-brand-accent/20 hover:-translate-y-1'
+                            <div className="mb-12 w-28 h-28 transform -rotate-12">
+                                {selectedSolution.illustration}
+                            </div>
+
+                            <span className="text-brand-accent font-black tracking-[0.4em] text-[10px] uppercase mb-4 block">Strategic Briefing</span>
+                            <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase mb-6 leading-none">
+                                {selectedSolution.title}
+                            </h2>
+                            <p className="text-slate-500 text-xl font-light leading-relaxed mb-12">
+                                {selectedSolution.desc}
+                            </p>
+
+                            <div className="flex flex-wrap gap-4 mb-16">
+                                {['Advanced Architecture', 'Scalable Ecosystem', 'AI Optimized'].map((tag) => (
+                                    <span key={tag} className="px-6 py-3 rounded-2xl bg-slate-50 border border-slate-100 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <button className="bg-slate-900 text-white px-12 py-5 rounded-full font-black text-xs uppercase tracking-[0.3em] hover:bg-brand-accent transition-all shadow-[0_20px_50px_rgba(0,0,0,0.2)]">
+                                Request Access
+                            </button>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
+
+            {/* Header Section */}
+            <section className="pt-48 pb-24 relative overflow-hidden bg-white border-b border-slate-100">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
+                    style={{ backgroundImage: 'radial-gradient(#6366f1 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+
+                <div className="container mx-auto px-6 relative z-10 max-w-7xl">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="max-w-4xl"
+                    >
+                        <span className="text-brand-accent font-black tracking-[0.6em] text-[10px] uppercase mb-8 block bg-brand-accent/5 w-fit px-6 py-2 rounded-full border border-brand-accent/10">Solutions Portfolio</span>
+                        <h1 className="text-slate-900 text-6xl md:text-9xl font-black tracking-tighter mb-12 leading-[0.85] uppercase">
+                            What we can <br /> <span className="text-brand-accent italic">Solve for you.</span>
+                        </h1>
+                        <p className="text-slate-500 text-xl md:text-3xl font-light leading-relaxed max-w-3xl">
+                            We engineer technical ecosystems that define industry standards.
+                            From intelligent CMS to enterprise-scale AI, our protocol is absolute.
+                        </p>
+                    </motion.div>
+
+                    {/* Filter Navigation */}
+                    <div className="mt-20 flex flex-wrap gap-3">
+                        {categories.map((cat) => (
+                            <button
+                                key={cat}
+                                onClick={() => setFilter(cat)}
+                                className={`px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all duration-500 ${filter === cat
+                                    ? 'bg-slate-950 text-white border-slate-950 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)]'
+                                    : 'bg-white text-slate-400 border-slate-100 hover:border-brand-accent/30 hover:text-slate-900 hover:shadow-xl hover:shadow-slate-100'
                                     }`}
                             >
-                                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-500 ${activeService === i ? 'bg-brand-accent text-white shadow-lg' : 'bg-slate-50 text-brand-accent group-hover:bg-brand-accent group-hover:text-white'}`}>
-                                    {React.cloneElement(service.icon, { size: 24 })}
-                                </div>
-                                <h4 className={`font-orbitron font-black text-xs uppercase tracking-[0.2em] transition-colors duration-500 ${activeService === i ? 'text-slate-900' : 'text-slate-400 group-hover:text-slate-900'}`}>
-                                    {service.title}
-                                </h4>
-                                {activeService === i && (
-                                    <motion.div layoutId="service-indicator" className="absolute top-0 left-0 w-1 h-full bg-brand-accent" />
-                                )}
-                            </motion.button>
+                                {cat === 'All' ? 'Genesis (All)' : cat}
+                            </button>
                         ))}
                     </div>
+                </div>
+            </section>
 
-                    {/* Active Detail */}
-                    <div className="lg:col-span-7">
-                        <AnimatePresence mode="wait">
+            {/* Services Display Grid */}
+            <section className="py-24 container mx-auto px-6 max-w-7xl">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-100 border border-slate-100 rounded-[3rem] overflow-hidden">
+                    <AnimatePresence mode='popLayout'>
+                        {filteredSolutions.map((solution, idx) => (
                             <motion.div
-                                key={activeService}
-                                initial={{ opacity: 0, x: 30, filter: "blur(10px)" }}
-                                animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                                exit={{ opacity: 0, x: -30, filter: "blur(10px)" }}
-                                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                                className="card-light p-12 md:p-20 rounded-[4rem] bg-white border border-slate-100 shadow-2xl relative overflow-hidden h-full flex flex-col justify-center"
+                                layout
+                                key={solution.id}
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.05 }}
+                                className="bg-white p-12 md:p-16 flex flex-col group hover:bg-slate-50 transition-all duration-700 relative overflow-hidden"
                             >
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 blur-3xl -z-0" />
-                                <span className="text-brand-accent font-black tracking-[0.5em] text-[10px] uppercase mb-8 block relative z-10">
-                                    {services[activeService].tagline}
-                                </span>
-                                <h3 className="font-orbitron font-black text-3xl md:text-5xl text-slate-900 mb-8 uppercase tracking-tighter leading-tight relative z-10">
-                                    {services[activeService].title}
+                                {/* Background Accent */}
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/5 blur-3xl rounded-full translate-x-16 -translate-y-16 group-hover:bg-brand-accent/10 transition-colors" />
+
+                                <div className="mb-12 w-full max-w-[200px] h-[120px] transform group-hover:scale-110 transition-transform duration-1000">
+                                    {solution.illustration}
+                                </div>
+
+                                <span className="text-brand-accent font-black text-[9px] uppercase tracking-widest mb-4 opacity-0 group-hover:opacity-100 transition-opacity">Protocol Ready</span>
+                                <h3 className="text-2xl font-black text-slate-900 mb-6 tracking-tight uppercase leading-none group-hover:text-brand-accent transition-colors">
+                                    {solution.title}
                                 </h3>
-                                <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-12 font-light relative z-10">{services[activeService].desc}</p>
+                                <p className="text-slate-500 text-base font-light leading-relaxed mb-12 flex-grow line-clamp-4 group-hover:text-slate-700 transition-colors">
+                                    {solution.desc}
+                                </p>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12 mb-12 relative z-10">
-                                    {services[activeService].features.map((f, i) => (
-                                        <div key={i} className="flex items-center gap-4 text-sm md:text-base text-slate-700 font-bold uppercase tracking-widest">
-                                            <div className="w-6 h-6 rounded-lg bg-brand-accent/10 flex items-center justify-center">
-                                                <ChevronRight size={14} className="text-brand-accent" />
-                                            </div>
-                                            {f}
-                                        </div>
-                                    ))}
-                                </div>
+                                <button
+                                    onClick={() => setSelectedSolution(solution)}
+                                    className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover:text-slate-900 transition-all"
+                                >
+                                    Detailed Brief <ArrowRight size={14} className="group-hover:translate-x-3 transition-transform duration-500 text-brand-accent" />
+                                </button>
 
-                                <div className="flex flex-wrap gap-8 relative z-10 pt-8 border-t border-slate-50">
-                                    {services[activeService].stats.map((stat, i) => (
-                                        <div key={i} className="bg-slate-50 px-8 py-6 rounded-2xl border border-slate-100 group hover:bg-white hover:shadow-lg transition-all duration-500">
-                                            <p className="text-brand-accent font-orbitron font-black text-2xl md:text-3xl mb-2">{stat.value}</p>
-                                            <p className="text-slate-400 text-[10px] uppercase font-black tracking-[0.2em]">{stat.label}</p>
-                                        </div>
-                                    ))}
-                                </div>
+                                {/* Hover Border */}
+                                <div className="absolute bottom-0 left-0 h-1 bg-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left w-full" />
                             </motion.div>
-                        </AnimatePresence>
-                    </div>
+                        ))}
+                    </AnimatePresence>
                 </div>
             </section>
-
-            {/* Process */}
-            <section className="container px-4 md:px-6 mx-auto">
-                <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mb-20">
-                    <span className="text-brand-accent font-black tracking-[0.5em] text-[10px] md:text-xs uppercase mb-6 block">The Methodology</span>
-                    <h2 className="font-orbitron font-black text-4xl md:text-7xl text-slate-900 uppercase tracking-tighter">
-                        Operational <br /><span className="text-brand-accent">Precision.</span>
-                    </h2>
-                </motion.div>
-
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {['Discovery & Research', 'Architecture & Design', 'Agile Development', 'Deploy & Scale'].map((step, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
-                            className="card-light p-10 rounded-[2.5rem] text-center group bg-white border border-slate-100 hover:shadow-2xl hover:border-brand-accent/20 transition-all duration-700 hover:-translate-y-2 shadow-xl"
-                        >
-                            <div className="w-16 h-16 mx-auto rounded-2xl bg-slate-900 text-white flex items-center justify-center font-orbitron font-black text-xl mb-8 group-hover:bg-brand-accent group-hover:shadow-lg transition-all duration-500 shadow-xl">
-                                {i + 1}
-                            </div>
-                            <h4 className="font-orbitron font-black text-sm text-slate-900 uppercase tracking-wider mb-4 leading-tight">{step}</h4>
-                            <p className="text-slate-400 text-xs font-bold uppercase tracking-widest leading-loose opacity-60">Phase {i + 1}</p>
-                        </motion.div>
-                    ))}
-                </div>
-            </section>
-
-            {/* Background Glows */}
-            <div className="fixed top-1/4 left-0 w-[400px] h-[400px] bg-brand-accent/5 blur-[150px] rounded-full -z-10 pointer-events-none" />
-            <div className="fixed bottom-1/3 right-0 w-[500px] h-[500px] bg-brand-secondary/5 blur-[130px] rounded-full -z-10 pointer-events-none" />
         </div>
     );
 };

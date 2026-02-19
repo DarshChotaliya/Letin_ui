@@ -52,7 +52,7 @@ const LogoSlider = () => {
     const duplicatedLogos = [...logos, ...logos, ...logos];
 
     return (
-        <section id="ecosystem" className="w-full py-32 md:py-48 relative overflow-hidden bg-white">
+        <section id="ecosystem" className="w-full pt-8 md:pt-12 pb-12 md:pb-16 relative overflow-hidden bg-white">
 
             <div className="container relative z-10 mx-auto">
                 <div className="text-center mb-24 md:mb-32">
