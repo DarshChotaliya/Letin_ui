@@ -21,7 +21,8 @@
 
   body {
     background-color: var(--brand-light);
-    @apply text-slate-900 font-inter;
+    color: theme('colors.slate.900');
+    font-family: theme('fontFamily.instrument');
     min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
@@ -73,7 +74,7 @@
   }
 
   .cinematic-heading {
-    font-family: 'Orbitron', monospace;
+    font-family: theme('fontFamily.jakarta');
     font-weight: 900;
     letter-spacing: -0.04em;
     line-height: 1.05;

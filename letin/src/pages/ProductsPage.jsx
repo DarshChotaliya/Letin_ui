@@ -18,7 +18,7 @@ const products = [
         subtitle: "Retail Reinvented",
         desc: "A powerful, unified commerce solution that connects your physical and digital storefronts. Real-time inventory sync, advanced customer analytics, and seamless payment processing.",
         icon: <Smartphone size={24} />,
-        image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c02?auto=format&fit=crop&q=80&w=1200",
+        image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=1200",
         features: ["Cloud-First Architecture", "Offline Support", "Detailed Reporting"]
     },
     {
@@ -43,7 +43,7 @@ const ProductsPage = () => {
                     className="max-w-4xl mx-auto"
                 >
                     <span className="text-brand-accent font-black tracking-[0.6em] text-[10px] uppercase mb-6 block">Our Innovations</span>
-                    <h1 className="text-slate-900 text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 leading-[0.9]">
+                    <h1 className="text-slate-900 text-5xl md:text-8xl font-black font-jakarta tracking-tighter uppercase mb-8 leading-[0.9]">
                         Technology that <br />
                         <span className="text-brand-accent italic">Defines Markets.</span>
                     </h1>
@@ -74,7 +74,7 @@ const ProductsPage = () => {
                                         </div>
                                         <span className="text-slate-400 font-bold uppercase tracking-widest text-[11px]">{product.subtitle}</span>
                                     </div>
-                                    <h2 className="text-4xl font-black text-slate-900 tracking-tight uppercase leading-none">{product.title}</h2>
+                                    <h2 className="text-4xl font-black font-jakarta text-slate-900 tracking-tight uppercase leading-none">{product.title}</h2>
                                     <p className="text-slate-500 text-lg font-light leading-relaxed italic border-l-4 border-brand-accent pl-6">
                                         "{product.desc}"
                                     </p>
@@ -120,7 +120,7 @@ const ProductsPage = () => {
                 <div className="bg-slate-950 rounded-[4rem] p-12 md:p-24 relative overflow-hidden flex flex-col items-center text-center">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.1)_0,transparent_70%)]" />
                     <div className="relative z-10">
-                        <h2 className="text-white text-4xl md:text-7xl font-black tracking-tighter uppercase mb-10 leading-none">
+                        <h2 className="text-white text-4xl md:text-7xl font-black font-jakarta tracking-tighter uppercase mb-10 leading-none">
                             Ready for your <br /> <span className="text-brand-accent italic">Custom Solution?</span>
                         </h2>
                         <button className="bg-white text-slate-950 px-12 py-5 rounded-full font-black text-xs uppercase tracking-[0.3em] hover:bg-brand-accent hover:text-white transition-all">

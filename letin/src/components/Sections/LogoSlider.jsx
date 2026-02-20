@@ -39,7 +39,7 @@ const KineticLogo = ({ logo, index }) => {
             </div>
 
             <div className="text-center mt-4">
-                <span className="text-slate-400 font-orbitron font-black text-xs md:text-sm uppercase tracking-[0.3em] group-hover:text-slate-900 transition-colors">
+                <span className="text-slate-400 font-jakarta font-black text-xs md:text-sm uppercase tracking-[0.3em] group-hover:text-slate-900 transition-colors">
                     {logo.name}
                 </span>
                 <div className="h-px w-0 bg-brand-accent group-hover:w-full transition-all duration-500 mx-auto mt-2" />

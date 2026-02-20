@@ -93,7 +93,7 @@ const Blog = () => {
                                 </div>
                             </div>
 
-                            <h3 className="text-2xl md:text-3xl font-orbitron font-black text-slate-900 mb-6 group-hover:text-brand-accent transition-colors duration-500 leading-tight uppercase tracking-wide relative z-10">
+                            <h3 className="text-2xl md:text-3xl font-jakarta font-black text-slate-900 mb-6 group-hover:text-brand-accent transition-colors duration-500 leading-tight uppercase tracking-wide relative z-10">
                                 {post.title}
                             </h3>
 

@@ -48,7 +48,7 @@ const About = () => {
                                 >
                                     <div className="absolute top-0 left-0 w-1 h-full bg-slate-200 group-hover:bg-brand-accent transition-colors duration-500" />
                                     <div className="relative z-10">
-                                        <h4 className="text-slate-900 font-orbitron font-black text-4xl md:text-5xl mb-3 group-hover:text-brand-accent transition-colors duration-500">
+                                        <h4 className="text-slate-900 font-jakarta font-black text-4xl md:text-5xl mb-3 group-hover:text-brand-accent transition-colors duration-500">
                                             {stat.val}
                                         </h4>
                                         <p className="text-slate-500 text-[10px] md:text-xs font-black tracking-widest uppercase mb-1">

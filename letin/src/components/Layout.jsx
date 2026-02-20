@@ -40,7 +40,7 @@ const Layout = () => {
     }, [location.pathname]);
 
     return (
-        <div className="min-h-screen w-full bg-[#02040a] relative font-inter select-none">
+        <div className="min-h-screen w-full bg-[#02040a] relative font-instrument select-none">
 
             <div className="fixed inset-0 bg-grid z-0 opacity-20 pointer-events-none" />
             <div className="fixed inset-0 bg-gradient-to-b from-brand-accent/[0.03] via-transparent to-brand-accent/[0.03] pointer-events-none z-0" />

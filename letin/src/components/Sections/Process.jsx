@@ -91,7 +91,7 @@ const Process = () => {
                                 <div className="p-3 bg-brand-accent rounded-xl text-white shadow-lg">
                                     <Zap size={20} fill="currentColor" />
                                 </div>
-                                <span className="text-slate-900 font-black text-[10px] uppercase tracking-[0.3em] font-orbitron">Efficiency Protocol</span>
+                                <span className="text-slate-900 font-black text-[10px] uppercase tracking-[0.3em] font-jakarta">Efficiency Protocol</span>
                             </div>
                             <p className="text-slate-500 text-xl font-light leading-relaxed relative z-10 border-l-2 border-brand-accent/20 pl-8 italic">
                                 "Our methodology compresses deployment cycles by 40% while maintaining absolute system stability."
@@ -126,7 +126,7 @@ const Process = () => {
                                             {React.cloneElement(step.icon, { size: 32 })}
                                         </div>
                                     </div>
-                                    <div className="absolute -top-4 -left-4 w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[11px] font-black font-orbitron text-brand-accent border border-slate-100 group-hover:bg-slate-900 group-hover:text-white group-hover:border-transparent transition-all duration-500 shadow-xl">
+                                    <div className="absolute -top-4 -left-4 w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[11px] font-black font-jakarta text-brand-accent border border-slate-100 group-hover:bg-slate-900 group-hover:text-white group-hover:border-transparent transition-all duration-500 shadow-xl">
                                         {step.number}
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@ const Process = () => {
                                         <span className="text-brand-accent text-[10px] font-black uppercase tracking-[0.6em] block opacity-40 group-hover:opacity-100 transition-opacity">
                                             {step.tagline}
                                         </span>
-                                        <h3 className="text-2xl md:text-5xl font-orbitron font-black text-slate-900 uppercase tracking-tight group-hover:text-brand-accent transition-colors duration-500 leading-tight">
+                                        <h3 className="text-2xl md:text-5xl font-jakarta font-black text-slate-900 uppercase tracking-tight group-hover:text-brand-accent transition-colors duration-500 leading-tight">
                                             {step.title}
                                         </h3>
                                     </div>

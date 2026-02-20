@@ -92,7 +92,7 @@ const Portfolio = () => {
                                         <motion.div layoutId="case-active" className="w-2 h-2 bg-brand-accent rounded-full shadow-[0_0_15px_rgba(99,102,241,1)]" />
                                     )}
                                 </div>
-                                <h3 className={`text-2xl font-orbitron font-black uppercase tracking-tight transition-colors duration-500 ${active === i ? 'text-white' : 'text-slate-500 group-hover:text-slate-300'}`}>
+                                <h3 className={`text-2xl font-jakarta font-black uppercase tracking-tight transition-colors duration-500 ${active === i ? 'text-white' : 'text-slate-500 group-hover:text-slate-300'}`}>
                                     {project.title}
                                 </h3>
                                 <div className={`overflow-hidden transition-all duration-700 ${active === i ? 'max-h-32 opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
@@ -138,7 +138,7 @@ const Portfolio = () => {
                                                     {projects[active].category}
                                                 </span>
                                             </div>
-                                            <h3 className="text-4xl md:text-6xl font-orbitron font-black text-white uppercase leading-[0.9] tracking-tighter">
+                                            <h3 className="text-4xl md:text-6xl font-jakarta font-black text-white uppercase leading-[0.9] tracking-tighter">
                                                 {projects[active].title}
                                             </h3>
                                         </div>
@@ -146,7 +146,7 @@ const Portfolio = () => {
                                         <div className="grid grid-cols-2 gap-4 md:gap-6 shrink-0">
                                             {projects[active].stats.map((stat, idx) => (
                                                 <div key={idx} className="p-6 md:p-8 bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 group-hover:bg-brand-accent/10 transition-colors duration-500 min-w-[120px] md:min-w-[160px]">
-                                                    <p className="text-2xl md:text-4xl font-orbitron font-black text-brand-accent mb-2">
+                                                    <p className="text-2xl md:text-4xl font-jakarta font-black text-brand-accent mb-2">
                                                         {stat.value}
                                                     </p>
                                                     <p className="text-slate-500 text-[8px] md:text-[9px] uppercase font-black tracking-[0.3em] leading-tight">

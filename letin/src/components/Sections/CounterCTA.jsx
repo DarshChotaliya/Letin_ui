@@ -42,10 +42,10 @@ const StatCounter = ({ value, suffix, label, icon }) => {
                     </div>
                 </div>
                 <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-4xl md:text-5xl font-black font-orbitron text-slate-900 group-hover:text-brand-accent transition-colors duration-500">
+                    <span className="text-4xl md:text-5xl font-black font-jakarta text-slate-900 group-hover:text-brand-accent transition-colors duration-500">
                         {displayValue}
                     </span>
-                    <span className="text-2xl font-black font-orbitron text-brand-accent">
+                    <span className="text-2xl font-black font-jakarta text-brand-accent">
                         {suffix}
                     </span>
                 </div>
@@ -101,7 +101,7 @@ const CounterCTA = () => {
                                     <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-2">Secure Line</p>
                                     <div className="flex items-center gap-4">
                                         <Mail className="text-brand-accent group-hover:scale-110 transition-transform" />
-                                        <span className="text-xl md:text-2xl font-orbitron font-bold text-slate-900 group-hover:text-brand-accent transition-colors">
+                                        <span className="text-xl md:text-2xl font-jakarta font-bold text-slate-900 group-hover:text-brand-accent transition-colors">
                                             communication@letin.tech
                                         </span>
                                     </div>
@@ -110,7 +110,7 @@ const CounterCTA = () => {
                                     <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-2">Global HQ</p>
                                     <div className="flex items-center gap-4">
                                         <Phone className="text-brand-accent group-hover:scale-110 transition-transform" />
-                                        <span className="text-xl md:text-2xl font-orbitron font-bold text-slate-900 group-hover:text-brand-accent transition-colors">
+                                        <span className="text-xl md:text-2xl font-jakarta font-bold text-slate-900 group-hover:text-brand-accent transition-colors">
                                             +91 (22) 4500 8822
                                         </span>
                                     </div>

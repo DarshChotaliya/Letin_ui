@@ -28,7 +28,7 @@ const Footer = () => {
 
                     {/* Company Column */}
                     <div className="lg:col-span-2 lg:ml-auto">
-                        <h4 className="font-orbitron font-black text-xs uppercase tracking-[.3em] text-slate-900 mb-10">Company</h4>
+                        <h4 className="font-jakarta font-black text-xs uppercase tracking-[.3em] text-slate-900 mb-10">Company</h4>
                         <ul className="space-y-5">
                             {[{ label: 'About Us', to: '/about' }, { label: 'Services', to: '/services' }, { label: 'Portfolio', to: '/portfolio' }, { label: 'Careers', to: '/careers' }, { label: 'Blog', to: '/blog' }, { label: 'Contact', to: '/contact' }].map((link) => (
                                 <li key={link.label}>
@@ -43,7 +43,7 @@ const Footer = () => {
 
                     {/* Solutions Column */}
                     <div className="lg:col-span-2 lg:ml-auto">
-                        <h4 className="font-orbitron font-black text-xs uppercase tracking-[.3em] text-slate-900 mb-10">Solutions</h4>
+                        <h4 className="font-jakarta font-black text-xs uppercase tracking-[.3em] text-slate-900 mb-10">Solutions</h4>
                         <ul className="space-y-5">
                             {[{ label: 'Enterprise AI', to: '/services' }, { label: 'Cloud Mastery', to: '/services' }, { label: 'Scalable SaaS', to: '/services' }, { label: 'Mobile Ecosystems', to: '/services' }, { label: 'Cyber Resilience', to: '/services' }].map((link) => (
                                 <li key={link.label}>
@@ -58,19 +58,22 @@ const Footer = () => {
 
                     {/* Contact Column */}
                     <div className="lg:col-span-4 lg:ml-auto">
-                        <h4 className="font-orbitron font-black text-xs uppercase tracking-[.3em] text-slate-900 mb-10">Contact</h4>
+                        <h4 className="font-jakarta font-black text-xs uppercase tracking-[.3em] text-slate-900 mb-10">Contact</h4>
                         <div className="space-y-8">
                             <div>
                                 <p className="text-slate-400 text-[10px] uppercase font-bold tracking-widest mb-2">Email</p>
-                                <p className="text-slate-700 font-bold text-sm hover:text-brand-accent cursor-pointer transition-colors">hello@letin.tech</p>
+                                <p className="text-slate-700 font-bold text-sm hover:text-brand-accent cursor-pointer transition-colors">info@letinAI.com</p>
                             </div>
                             <div>
                                 <p className="text-slate-400 text-[10px] uppercase font-bold tracking-widest mb-2">Phone</p>
-                                <p className="text-slate-700 font-bold text-sm hover:text-brand-accent cursor-pointer transition-colors">+91 22 4500 XXXX</p>
+                                <p className="text-slate-700 font-bold text-sm hover:text-brand-accent cursor-pointer transition-colors">
+                                    +91 9023671902<br />
+                                    +91 9327182951
+                                </p>
                             </div>
                             <div>
                                 <p className="text-slate-400 text-[10px] uppercase font-bold tracking-widest mb-2">Headquarters</p>
-                                <p className="text-slate-500 text-sm font-light">Letin Tower, Andheri East, Mumbai 400069</p>
+                                <p className="text-slate-500 text-sm font-light">GANESH GLORY, 11, Jagatpur Rd, near BSNL Office, Jagatpur, Ahmedabad, Gujarat 382470</p>
                             </div>
                         </div>
                     </div>

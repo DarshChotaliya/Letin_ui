@@ -79,7 +79,7 @@ const Services = () => {
                                         <div className="text-left">
                                             <div className="flex items-center gap-3">
                                                 <div className={`w-1.5 h-1.5 rounded-full bg-brand-accent transition-all duration-700 ${activeSvc === i ? 'animate-pulse opacity-100' : 'opacity-0 group-hover:opacity-30'}`} />
-                                                <p className={`font-orbitron font-black text-xl md:text-2xl uppercase tracking-wider transition-colors duration-500 ${activeSvc === i ? 'text-slate-900' : 'text-slate-400 group-hover:text-slate-600'}`}>
+                                                <p className={`font-jakarta font-black text-xl md:text-2xl uppercase tracking-wider transition-colors duration-500 ${activeSvc === i ? 'text-slate-900' : 'text-slate-400 group-hover:text-slate-600'}`}>
                                                     {svc.title}
                                                 </p>
                                             </div>
@@ -111,7 +111,7 @@ const Services = () => {
 
                                 <div className="relative z-10 space-y-16">
                                     <div className="space-y-8">
-                                        <h3 className="text-4xl md:text-7xl font-orbitron font-black text-slate-900 uppercase tracking-tighter leading-tight">
+                                        <h3 className="text-4xl md:text-7xl font-jakarta font-black text-slate-900 uppercase tracking-tighter leading-tight">
                                             {services[activeSvc].title}
                                         </h3>
                                         <p className="text-slate-500 text-lg md:text-2xl font-light leading-relaxed max-w-2xl">

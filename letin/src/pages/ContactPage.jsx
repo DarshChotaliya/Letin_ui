@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, ChevronDown, Send } from 'lucide-react';
 
 const contactInfo = [
-    { icon: <Mail size={24} />, title: "Email Us", detail: "hello@letin.tech", sub: "Response within 24 hours" },
-    { icon: <Phone size={24} />, title: "Call Us", detail: "+91 22 4500 XXXX", sub: "Mon-Fri, 9AM-6PM IST" },
-    { icon: <MapPin size={24} />, title: "Visit Us", detail: "Letin Tower, Mumbai", sub: "Andheri East, 400069" },
+    { icon: <Mail size={24} />, title: "Email Us", detail: "info@letinAI.com", sub: "Response within 24 hours" },
+    { icon: <Phone size={24} />, title: "Call Us", detail: <>{"+91 9023671902"}<br />{"+91 9327182951"}</>, sub: "Mon – Fri, 10AM – 7PM" },
+    { icon: <MapPin size={24} />, title: "Visit Us", detail: "GANESH GLORY, 11, Jagatpur Rd", sub: "Ahmedabad, Gujarat 382470" },
 ];
 
 const faqs = [
@@ -66,7 +66,7 @@ const ContactPage = () => {
                             <div className="w-16 h-16 mx-auto rounded-2xl bg-slate-50 flex items-center justify-center text-brand-accent mb-10 group-hover:bg-brand-accent group-hover:text-white transition-all duration-500 shadow-sm">
                                 {info.icon}
                             </div>
-                            <h4 className="font-orbitron font-black text-[10px] text-slate-400 uppercase tracking-[0.4em] mb-6">{info.title}</h4>
+                            <h4 className="font-jakarta font-black text-[10px] text-slate-400 uppercase tracking-[0.4em] mb-6">{info.title}</h4>
                             <p className="text-slate-900 font-black text-xl mb-3 tracking-tighter uppercase">{info.detail}</p>
                             <p className="text-slate-500 text-sm font-light leading-relaxed">{info.sub}</p>
                         </motion.div>
@@ -88,7 +88,7 @@ const ContactPage = () => {
                             <span className="text-brand-accent font-black tracking-[0.5em] text-[10px] uppercase block mb-4">
                                 Strategic Brief
                             </span>
-                            <h3 className="font-orbitron font-black text-3xl md:text-5xl text-slate-900 uppercase tracking-tighter leading-tight">
+                            <h3 className="font-jakarta font-black text-3xl md:text-5xl text-slate-900 uppercase tracking-tighter leading-tight">
                                 Transmit <br /><span className="text-brand-accent">Briefing.</span>
                             </h3>
                         </div>
@@ -148,7 +148,7 @@ const ContactPage = () => {
                         viewport={{ once: true }}
                         className="lg:col-span-5"
                     >
-                        <h3 className="font-orbitron font-black text-2xl text-slate-900 mb-12 uppercase tracking-tighter">Intelligence <br /><span className="text-brand-accent">Repository.</span></h3>
+                        <h3 className="font-jakarta font-black text-2xl text-slate-900 mb-12 uppercase tracking-tighter">Intelligence <br /><span className="text-brand-accent">Repository.</span></h3>
                         <div className="space-y-4">
                             {faqs.map((faq, i) => (
                                 <div
@@ -159,7 +159,7 @@ const ContactPage = () => {
                                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                                         className="w-full flex items-center justify-between p-8 text-left"
                                     >
-                                        <span className={`font-orbitron font-black text-xs uppercase tracking-[0.15em] transition-colors duration-300 ${openFaq === i ? 'text-brand-accent' : 'text-slate-700'}`}>{faq.q}</span>
+                                        <span className={`font-jakarta font-black text-xs uppercase tracking-[0.15em] transition-colors duration-300 ${openFaq === i ? 'text-brand-accent' : 'text-slate-700'}`}>{faq.q}</span>
                                         <ChevronDown size={14} className={`text-slate-400 transition-transform duration-500 ${openFaq === i ? 'rotate-180 text-brand-accent' : ''}`} />
                                     </button>
                                     <AnimatePresence>

@@ -73,7 +73,7 @@ const WhyChooseUs = () => {
                                     transition={{ delay: i * 0.2, duration: 0.8 }}
                                     className="p-10 rounded-[2.5rem] border border-white/5 hover:border-brand-accent/30 transition-all duration-500 bg-white/[0.02] backdrop-blur-xl shadow-2xl"
                                 >
-                                    <div className="text-4xl md:text-6xl font-orbitron font-black text-brand-accent mb-3 shadow-glow-sm">
+                                    <div className="text-4xl md:text-6xl font-jakarta font-black text-brand-accent mb-3 shadow-glow-sm">
                                         {stat.val}
                                     </div>
                                     <div className="space-y-2">
@@ -128,7 +128,7 @@ const WhyChooseUs = () => {
                                             <div className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse" />
                                             <span className="text-brand-accent text-[10px] font-black uppercase tracking-[0.5em]">{item.tag}</span>
                                         </div>
-                                        <h4 className="text-white font-black font-orbitron text-2xl uppercase tracking-wider leading-tight group-hover:text-brand-accent transition-colors duration-500">
+                                        <h4 className="text-white font-black font-jakarta text-2xl uppercase tracking-wider leading-tight group-hover:text-brand-accent transition-colors duration-500">
                                             {item.title}
                                         </h4>
                                         <p className="text-slate-400 text-base leading-relaxed font-light group-hover:text-slate-200 transition-colors duration-500">

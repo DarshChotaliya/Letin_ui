@@ -19,8 +19,8 @@ export default {
                 }
             },
             fontFamily: {
-                orbitron: ['Orbitron', 'sans-serif'],
-                inter: ['Inter', 'sans-serif'],
+                jakarta: '"Plus Jakarta Sans", sans-serif',
+                instrument: '"Instrument Sans", sans-serif',
             },
             animation: {
                 'float': 'float 6s ease-in-out infinite',

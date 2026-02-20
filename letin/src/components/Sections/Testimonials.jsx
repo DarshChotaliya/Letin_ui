@@ -214,13 +214,13 @@ const Testimonials = () => {
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center gap-6">
                                                 <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-brand-accent to-brand-secondary p-[1px]">
-                                                    <div className="w-full h-full bg-[#02040a] rounded-[calc(1.5rem-1px)] flex items-center justify-center font-black text-white text-3xl font-orbitron">
+                                                    <div className="w-full h-full bg-[#02040a] rounded-[calc(1.5rem-1px)] flex items-center justify-center font-black text-white text-3xl font-jakarta">
                                                         {testimonials[activeIndex].name.charAt(0)}
                                                     </div>
                                                 </div>
                                                 <div>
                                                     <h5 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight">{testimonials[activeIndex].name}</h5>
-                                                    <p className="text-brand-accent/60 text-[10px] font-black uppercase tracking-[0.4em] mt-2 font-inter">{testimonials[activeIndex].role}</p>
+                                                    <p className="text-brand-accent/60 text-[10px] font-black uppercase tracking-[0.4em] mt-2 font-instrument">{testimonials[activeIndex].role}</p>
                                                 </div>
                                             </div>
 

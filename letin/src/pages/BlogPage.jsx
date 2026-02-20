@@ -97,7 +97,7 @@ const BlogPage = () => {
                                     <span className="text-brand-accent font-black text-[10px] uppercase tracking-[0.4em]">{featuredPost.category}</span>
                                     <div className="w-8 h-[2px] bg-brand-accent/40" />
                                 </div>
-                                <h2 className="font-orbitron font-black text-2xl md:text-4xl lg:text-5xl text-slate-900 mb-8 uppercase tracking-tighter leading-[0.9] group-hover:text-brand-accent transition-colors">
+                                <h2 className="font-jakarta font-black text-2xl md:text-4xl lg:text-5xl text-slate-900 mb-8 uppercase tracking-tighter leading-[0.9] group-hover:text-brand-accent transition-colors">
                                     {featuredPost.title}
                                 </h2>
                                 <p className="text-slate-500 mb-12 text-base md:text-lg leading-relaxed font-light max-w-xl">{featuredPost.excerpt}</p>
@@ -133,7 +133,7 @@ const BlogPage = () => {
                                 <span className="text-brand-accent font-black text-[9px] uppercase tracking-[0.3em]">{post.category}</span>
                                 <div className="w-4 h-[2px] bg-brand-accent/20" />
                             </div>
-                            <h3 className="font-orbitron font-black text-lg text-slate-900 mb-8 uppercase tracking-tighter leading-tight group-hover:text-brand-accent transition-colors flex-grow">
+                            <h3 className="font-jakarta font-black text-lg text-slate-900 mb-8 uppercase tracking-tighter leading-tight group-hover:text-brand-accent transition-colors flex-grow">
                                 {post.title}
                             </h3>
                             <p className="text-slate-500 text-xs mb-12 leading-relaxed font-light line-clamp-3 max-w-[280px]">{post.excerpt}</p>
