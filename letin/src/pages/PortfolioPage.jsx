@@ -76,16 +76,16 @@ const PortfolioPage = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="max-w-6xl"
+                        className="max-w-5xl mx-auto text-center flex flex-col items-center"
                     >
                         <span className="text-brand-accent font-black tracking-[0.8em] text-[10px] uppercase mb-12 block bg-brand-accent/5 px-6 py-2 rounded-full border border-brand-accent/10 w-fit">
                             Success Stories
                         </span>
-                        <h1 className="cinematic-heading text-5xl md:text-8xl lg:text-9xl text-slate-900 leading-[0.85] mb-12 uppercase tracking-tighter">
+                        <h1 className="cinematic-heading text-5xl md:text-7xl lg:text-8xl text-slate-900 leading-[0.85] mb-12 uppercase tracking-tighter">
                             Engineering <br />
                             <span className="text-brand-accent italic">Impact.</span>
                         </h1>
-                        <p className="text-slate-500 text-xl md:text-3xl font-light leading-relaxed max-w-4xl">
+                        <p className="text-slate-500 text-base md:text-xl font-light leading-relaxed max-w-2xl">
                             Every project we undertake is an opportunity to prove that quality work, modern
                             technology, and on-time delivery aren't just promises. From startups to fast-growing
                             businesses, we build solutions that help you achieve your goals.

@@ -51,7 +51,7 @@ const Testimonials = () => {
         if (isPaused) return;
         const interval = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % testimonials.length);
-        }, 5000);
+        }, 2000);
         return () => clearInterval(interval);
     }, [isPaused]);
 
@@ -135,8 +135,8 @@ const Testimonials = () => {
                                 exit={{ opacity: 0, filter: "blur(20px)", y: -30 }}
                                 transition={{
                                     type: "spring",
-                                    stiffness: 40,
-                                    damping: 20,
+                                    stiffness: 120,
+                                    damping: 30,
                                     restDelta: 0.001
                                 }}
                                 className="grid grid-cols-1 lg:grid-cols-12 bg-[#ffffff03] backdrop-blur-[40px] rounded-[32px] border border-white/[0.08] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] overflow-hidden relative"

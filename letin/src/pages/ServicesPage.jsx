@@ -167,20 +167,20 @@ const ServicesPage = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="max-w-4xl"
+                        className="max-w-5xl mx-auto text-center flex flex-col items-center"
                     >
                         <span className="text-brand-accent font-black tracking-[0.6em] text-[10px] uppercase mb-8 block bg-brand-accent/5 w-fit px-6 py-2 rounded-full border border-brand-accent/10">Solutions Portfolio</span>
-                        <h1 className="text-slate-900 text-6xl md:text-9xl font-black tracking-tighter mb-12 leading-[0.85] uppercase">
+                        <h1 className="text-slate-900 text-5xl md:text-8xl font-black tracking-tighter mb-10 leading-[0.85] uppercase">
                             What we can <br /> <span className="text-brand-accent italic">Solve for you.</span>
                         </h1>
-                        <p className="text-slate-500 text-xl md:text-3xl font-light leading-relaxed max-w-3xl">
+                        <p className="text-slate-500 text-base md:text-xl font-light leading-relaxed max-w-2xl">
                             We engineer technical ecosystems that define industry standards.
                             From intelligent CMS to enterprise-scale AI, our protocol is absolute.
                         </p>
                     </motion.div>
 
                     {/* Filter Navigation */}
-                    <div className="mt-20 flex flex-wrap gap-3">
+                    <div className="mt-20 flex flex-wrap gap-3 justify-center">
                         {categories.map((cat) => (
                             <button
                                 key={cat}
@@ -209,26 +209,26 @@ const ServicesPage = () => {
                                 whileInView={{ opacity: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.05 }}
-                                className="bg-white p-12 md:p-16 flex flex-col group hover:bg-slate-50 transition-all duration-700 relative overflow-hidden"
+                                className="bg-white p-12 md:p-16 flex flex-col items-center text-center group hover:bg-slate-50 transition-all duration-700 relative overflow-hidden"
                             >
                                 {/* Background Accent */}
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/5 blur-3xl rounded-full translate-x-16 -translate-y-16 group-hover:bg-brand-accent/10 transition-colors" />
 
-                                <div className="mb-12 w-full max-w-[200px] h-[120px] transform group-hover:scale-110 transition-transform duration-1000">
+                                <div className="mb-12 w-full max-w-[180px] h-[100px] transform group-hover:scale-110 transition-transform duration-1000 mx-auto">
                                     {solution.illustration}
                                 </div>
 
                                 <span className="text-brand-accent font-black text-[9px] uppercase tracking-widest mb-4 opacity-0 group-hover:opacity-100 transition-opacity">Protocol Ready</span>
-                                <h3 className="text-2xl font-black text-slate-900 mb-6 tracking-tight uppercase leading-none group-hover:text-brand-accent transition-colors">
+                                <h3 className="text-xl font-black text-slate-900 mb-6 tracking-tight uppercase leading-none group-hover:text-brand-accent transition-colors">
                                     {solution.title}
                                 </h3>
-                                <p className="text-slate-500 text-base font-light leading-relaxed mb-12 flex-grow line-clamp-4 group-hover:text-slate-700 transition-colors">
+                                <p className="text-slate-500 text-sm font-light leading-relaxed mb-12 flex-grow line-clamp-4 group-hover:text-slate-700 transition-colors">
                                     {solution.desc}
                                 </p>
 
                                 <button
                                     onClick={() => setSelectedSolution(solution)}
-                                    className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover:text-slate-900 transition-all"
+                                    className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover:text-slate-900 transition-all mx-auto"
                                 >
                                     Detailed Brief <ArrowRight size={14} className="group-hover:translate-x-3 transition-transform duration-500 text-brand-accent" />
                                 </button>

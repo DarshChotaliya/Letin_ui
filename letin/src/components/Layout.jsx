@@ -8,14 +8,7 @@ import Lenis from 'lenis';
 
 const Layout = () => {
     const location = useLocation();
-    const { scrollYProgress } = useScroll();
 
-    // High-precision spring for scroll bar
-    const scaleX = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001
-    });
 
     useEffect(() => {
         // Initialize Lenis for buttery smooth scrolling
@@ -48,13 +41,7 @@ const Layout = () => {
 
     return (
         <div className="min-h-screen w-full bg-[#02040a] relative font-inter select-none">
-            {/* Ultra-smooth Scroll Progress Bar */}
-            <motion.div
-                className="fixed top-0 left-0 right-0 h-[2px] bg-brand-accent z-[9999] origin-left shadow-[0_0_10px_rgba(99,102,241,1)]"
-                style={{ scaleX }}
-            />
 
-            {/* Global Visual Overlays */}
             <div className="fixed inset-0 bg-grid z-0 opacity-20 pointer-events-none" />
             <div className="fixed inset-0 bg-gradient-to-b from-brand-accent/[0.03] via-transparent to-brand-accent/[0.03] pointer-events-none z-0" />
 

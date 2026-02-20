@@ -124,8 +124,8 @@ const Portfolio = () => {
                                 <div className="absolute inset-0 bg-slate-900/40 mix-blend-overlay" />
 
                                 {/* Floating Details */}
-                                <div className="absolute bottom-0 left-0 w-full p-12 md:p-20">
-                                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
+                                <div className="absolute bottom-0 left-0 w-full p-10 md:p-20">
+                                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 md:gap-12 flex-wrap">
                                         <div className="space-y-8 max-w-2xl">
                                             <div className="flex items-center gap-6">
                                                 <div className="px-6 py-2 bg-white/5 backdrop-blur-xl rounded-full border border-white/10">
@@ -143,13 +143,13 @@ const Portfolio = () => {
                                             </h3>
                                         </div>
 
-                                        <div className="grid grid-cols-2 gap-6 md:gap-8">
+                                        <div className="grid grid-cols-2 gap-4 md:gap-6 shrink-0">
                                             {projects[active].stats.map((stat, idx) => (
-                                                <div key={idx} className="p-8 bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 group-hover:bg-brand-accent/10 transition-colors duration-500">
+                                                <div key={idx} className="p-6 md:p-8 bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 group-hover:bg-brand-accent/10 transition-colors duration-500 min-w-[120px] md:min-w-[160px]">
                                                     <p className="text-2xl md:text-4xl font-orbitron font-black text-brand-accent mb-2">
                                                         {stat.value}
                                                     </p>
-                                                    <p className="text-slate-500 text-[9px] uppercase font-black tracking-[0.3em]">
+                                                    <p className="text-slate-500 text-[8px] md:text-[9px] uppercase font-black tracking-[0.3em] leading-tight">
                                                         {stat.label}
                                                     </p>
                                                 </div>

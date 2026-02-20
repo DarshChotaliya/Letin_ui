@@ -53,19 +53,19 @@ const BlogPage = () => {
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-secondary/[0.02] blur-[120px] rounded-full pointer-events-none" />
 
             {/* Hero */}
-            <section className="container px-6 md:px-12 mb-32 md:mb-56 relative z-10 mx-auto">
+            <section className="container px-6 md:px-12 mb-32 md:mb-56 relative z-10 mx-auto text-center flex flex-col items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ type: "spring", stiffness: 40, damping: 20 }}
-                    className="max-w-6xl"
+                    className="max-w-5xl flex flex-col items-center"
                 >
-                    <span className="text-brand-accent font-black tracking-[0.6em] text-[10px] md:text-xs uppercase mb-8 block">Intelligence Feed</span>
-                    <h1 className="cinematic-heading text-5xl md:text-8xl lg:text-9xl text-slate-900 leading-[0.9] mb-12 uppercase tracking-tighter">
+                    <span className="text-brand-accent font-black tracking-[0.6em] text-[10px] md:text-xs uppercase mb-8 block bg-brand-accent/5 px-6 py-2 rounded-full border border-brand-accent/10 w-fit">Intelligence Feed</span>
+                    <h1 className="cinematic-heading text-5xl md:text-7xl lg:text-8xl text-slate-900 leading-[0.9] mb-12 uppercase tracking-tighter">
                         Strategic <br />
                         <span className="text-brand-accent">Insights.</span>
                     </h1>
-                    <p className="text-slate-500 text-xl md:text-3xl font-light leading-relaxed max-w-4xl">
+                    <p className="text-slate-500 text-base md:text-xl font-light leading-relaxed max-w-2xl">
                         Deep dives into the technical paradigms and strategic shifts
                         defining the next era of global enterprise technology.
                     </p>
@@ -80,7 +80,7 @@ const BlogPage = () => {
                     viewport={{ once: true }}
                     className="p-1 rounded-[4rem] bg-gradient-to-br from-slate-100 to-transparent shadow-[0_60px_120px_-30px_rgba(0,0,0,0.05)]"
                 >
-                    <div className="bg-white rounded-[3.8rem] overflow-hidden group cursor-pointer">
+                    <div className="bg-white rounded-[3.8rem] overflow-hidden group cursor-pointer text-center">
                         <div className="grid lg:grid-cols-2">
                             <div className="relative h-80 lg:h-auto overflow-hidden">
                                 <img src={featuredPost.image} alt={featuredPost.title} className="w-full h-full object-cover group-hover:scale-105 transition-all duration-[2s]" />
@@ -91,16 +91,17 @@ const BlogPage = () => {
                                     </span>
                                 </div>
                             </div>
-                            <div className="p-12 md:p-24 flex flex-col justify-center">
+                            <div className="p-12 md:p-20 flex flex-col justify-center items-center">
                                 <div className="flex items-center gap-4 mb-8">
-                                    <div className="w-12 h-[2px] bg-brand-accent/40" />
+                                    <div className="w-8 h-[2px] bg-brand-accent/40" />
                                     <span className="text-brand-accent font-black text-[10px] uppercase tracking-[0.4em]">{featuredPost.category}</span>
+                                    <div className="w-8 h-[2px] bg-brand-accent/40" />
                                 </div>
-                                <h2 className="font-orbitron font-black text-3xl md:text-5xl lg:text-6xl text-slate-900 mb-10 uppercase tracking-tighter leading-[0.9] group-hover:text-brand-accent transition-colors">
+                                <h2 className="font-orbitron font-black text-2xl md:text-4xl lg:text-5xl text-slate-900 mb-8 uppercase tracking-tighter leading-[0.9] group-hover:text-brand-accent transition-colors">
                                     {featuredPost.title}
                                 </h2>
-                                <p className="text-slate-500 mb-12 text-lg md:text-xl leading-relaxed font-light">{featuredPost.excerpt}</p>
-                                <div className="flex items-center justify-between pt-10 border-t border-slate-50">
+                                <p className="text-slate-500 mb-12 text-base md:text-lg leading-relaxed font-light max-w-xl">{featuredPost.excerpt}</p>
+                                <div className="flex items-center justify-between w-full pt-10 border-t border-slate-50">
                                     <div className="flex items-center gap-10 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">
                                         <span className="text-slate-900">{featuredPost.author}</span>
                                         <span className="flex items-center gap-3"><Clock size={16} className="text-brand-accent" /> {featuredPost.readTime}</span>
@@ -125,17 +126,18 @@ const BlogPage = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="bg-white p-12 rounded-[3.5rem] border border-slate-100 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] transition-all duration-700 group cursor-pointer flex flex-col"
+                            className="bg-white p-12 rounded-[3.5rem] border border-slate-100 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] transition-all duration-700 group cursor-pointer flex flex-col items-center text-center"
                         >
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="w-6 h-[2px] bg-brand-accent/20" />
+                                <div className="w-4 h-[2px] bg-brand-accent/20" />
                                 <span className="text-brand-accent font-black text-[9px] uppercase tracking-[0.3em]">{post.category}</span>
+                                <div className="w-4 h-[2px] bg-brand-accent/20" />
                             </div>
-                            <h3 className="font-orbitron font-black text-xl text-slate-900 mb-8 uppercase tracking-tighter leading-tight group-hover:text-brand-accent transition-colors flex-grow">
+                            <h3 className="font-orbitron font-black text-lg text-slate-900 mb-8 uppercase tracking-tighter leading-tight group-hover:text-brand-accent transition-colors flex-grow">
                                 {post.title}
                             </h3>
-                            <p className="text-slate-500 text-sm mb-12 leading-relaxed font-light line-clamp-3">{post.excerpt}</p>
-                            <div className="flex items-center justify-between pt-8 border-t border-slate-50">
+                            <p className="text-slate-500 text-xs mb-12 leading-relaxed font-light line-clamp-3 max-w-[280px]">{post.excerpt}</p>
+                            <div className="flex items-center justify-between w-full pt-8 border-t border-slate-50">
                                 <div className="flex items-center gap-6 text-slate-400 text-[9px] font-black uppercase tracking-[0.15em]">
                                     <span>{post.date}</span>
                                     <span className="flex items-center gap-2"><Clock size={14} className="opacity-50" /> {post.readTime}</span>

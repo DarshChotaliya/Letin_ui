@@ -65,7 +65,7 @@ const Header = () => {
     };
 
     const navItems = [
-        { label: 'Home', path: '/' },
+        { path: '/' },
         // ...
         { label: 'About', path: '/about' },
         { label: 'Solution', path: '/services', mega: true },

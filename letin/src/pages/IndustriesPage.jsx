@@ -51,18 +51,19 @@ const IndustriesPage = () => {
     return (
         <div className="pt-32 pb-24 min-h-screen bg-[#fbfbfd]">
             {/* Hero Section */}
-            <section className="container mx-auto px-6 mb-24">
-                <div className="max-w-4xl">
+            <section className="container mx-auto px-6 mb-24 flex flex-col items-center text-center">
+                <div className="max-w-5xl">
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="flex flex-col items-center"
                     >
-                        <span className="text-brand-accent font-black tracking-[0.6em] text-[10px] uppercase mb-6 block">Our Reach</span>
-                        <h1 className="text-slate-900 text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 leading-[0.9]">
+                        <span className="text-brand-accent font-black tracking-[0.6em] text-[10px] uppercase mb-8 block bg-brand-accent/5 px-6 py-2 rounded-full border border-brand-accent/10 w-fit">Our Reach</span>
+                        <h1 className="text-slate-900 text-5xl md:text-7xl font-black tracking-tighter uppercase mb-6 leading-[0.9]">
                             Expertise across <br />
                             <span className="text-brand-accent italic">Every Sector.</span>
                         </h1>
-                        <p className="text-slate-500 text-xl font-light leading-relaxed max-w-2xl">
+                        <p className="text-slate-500 text-base md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
                             We deliver specialized technology solutions that overcome unique sectoral barriers
                             and drive industry-wide transformation.
                         </p>
@@ -80,20 +81,22 @@ const IndustriesPage = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-slate-200 transition-all group"
+                            className="bg-white p-12 rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-slate-200 transition-all group flex flex-col items-center text-center"
                         >
-                            <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-brand-accent mb-10 group-hover:bg-brand-accent group-hover:text-white transition-colors duration-500">
+                            <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-brand-accent mb-8 group-hover:bg-brand-accent group-hover:text-white transition-colors duration-500">
                                 {item.icon}
                             </div>
 
-                            <span className="text-brand-accent font-black text-[9px] uppercase tracking-widest mb-4 block">{item.stats}</span>
-                            <h3 className="text-2xl font-black text-slate-900 mb-6 uppercase tracking-tight">{item.title}</h3>
-                            <p className="text-slate-500 font-light leading-relaxed mb-10">
+                            <span className="text-brand-accent font-black text-[8px] uppercase tracking-widest mb-4 block">{item.stats}</span>
+                            <h3 className="text-xl font-black text-slate-900 mb-6 uppercase tracking-tight group-hover:text-brand-accent transition-colors">
+                                {item.title}
+                            </h3>
+                            <p className="text-slate-500 text-sm font-light leading-relaxed mb-10 max-w-[280px]">
                                 {item.desc}
                             </p>
 
-                            <button className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-brand-accent transition-colors">
-                                Industry Insights <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
+                            <button className="flex items-center gap-4 text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-slate-900 transition-colors">
+                                Industry Insights <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform text-brand-accent" />
                             </button>
                         </motion.div>
                     ))}

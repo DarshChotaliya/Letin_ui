@@ -33,7 +33,7 @@ const values = [
     {
         title: "Vision",
         desc: "Our vision is to build a strong and trusted business ecosystem where companies grow with confidence through the right guidance, meaningful partnerships, and reliable technology.",
-        image: "https://images.unsplash.com/photo-1497366754035-7c702683ba5a?auto=format&fit=crop&q=80&w=1200",
+        image: "https://images.unsplash.com/photo-1507537362848-9c7e70b7b5c1?auto=format&fit=crop&q=80&w=1200",
         icon: <Globe size={24} />
     },
     {
@@ -75,158 +75,153 @@ const expertise = [
 ];
 
 const AboutPage = () => {
-    const [hoveredValue, setHoveredValue] = React.useState(null);
+    const [hoveredValue, setHoveredValue] = React.useState(0);
 
     return (
         <div className="min-h-screen bg-[#fbfbfd]">
             {/* Hero Section */}
-            <section className="pt-48 pb-32 relative overflow-hidden bg-white border-b border-slate-100">
-                <div className="container mx-auto px-6 relative z-10">
+            <section className="pt-48 pb-24 relative overflow-hidden bg-white border-b border-slate-100">
+                <div className="container mx-auto px-6 relative z-10 mb-16 flex flex-col items-center text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="max-w-6xl"
+                        className="max-w-4xl flex flex-col items-center"
                     >
-                        <span className="text-brand-accent font-black tracking-[0.8em] text-[10px] uppercase mb-12 block bg-brand-accent/5 px-6 py-2 rounded-full border border-brand-accent/10 w-fit">
+                        <span className="text-brand-accent font-black tracking-[0.8em] text-[10px] uppercase mb-6 block bg-brand-accent/5 px-6 py-2 rounded-full border border-brand-accent/10 w-fit">
                             Our Identity
                         </span>
-                        <h1 className="cinematic-heading text-6xl md:text-9xl text-slate-900 leading-[0.85] mb-12 uppercase tracking-tighter">
+                        <h1 className="cinematic-heading text-4xl md:text-6xl lg:text-7xl text-slate-900 leading-[0.9] mb-8 uppercase tracking-tighter">
                             About <br />
                             <span className="text-brand-accent italic">Us.</span>
                         </h1>
-                        <p className="text-slate-500 text-xl md:text-3xl font-light leading-relaxed max-w-4xl">
+                        <p className="text-slate-500 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
                             We are team of highly precise engineers, architects, and designers
                             dedicated to building the future of industrial-scale digital solutions.
                         </p>
                     </motion.div>
                 </div>
 
-                {/* Hero Feature Image - Full Width Edge-to-Edge */}
-                <div className="mt-24 w-full h-[500px] lg:h-[800px] overflow-hidden relative group">
-                    <img
+                {/* Hero Feature Image - Full Width Display */}
+                <div className="w-full h-[60vh] md:h-[80vh] overflow-hidden relative group">
+                    <motion.img
+                        initial={{ scale: 1.1, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
                         src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000"
                         alt="Letin Office"
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[2000ms] scale-105 group-hover:scale-100"
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[1500ms]"
                     />
                     <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-all duration-1000 pointer-events-none" />
-
-                    {/* Architectural Overlay */}
-                    <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white to-transparent" />
                 </div>
             </section>
 
-            {/* Introduction Section */}
-            <section className="py-32 container mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-24 items-center">
-                    <div>
-                        <div className="flex items-center gap-6 mb-12">
-                            <Logo className="h-10 text-slate-900" isDark={false} />
-                            <div className="h-8 w-px bg-slate-200" />
-                            <span className="text-slate-400 font-black tracking-widest text-xs uppercase">Since 2021</span>
+            {/* Introduction Section - Overlapping Card */}
+            <section className="pb-32 container mx-auto px-6 relative z-20 -mt-24 md:-mt-48">
+                <motion.div
+                    initial={{ y: 50, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="bg-white p-8 md:p-20 rounded-[3rem] shadow-[0_-20px_80px_-20px_rgba(0,0,0,0.1)]"
+                >
+                    <div className="grid lg:grid-cols-2 gap-24 items-center">
+                        <div>
+                            <div className="flex items-center gap-6 mb-12">
+                                <Logo className="h-10 text-slate-900" isDark={false} />
+                                <div className="h-8 w-px bg-slate-200" />
+                                <span className="text-slate-400 font-black tracking-widest text-xs uppercase">Since 2021</span>
+                            </div>
+                            <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase mb-10 leading-none">
+                                We are <br /> <span className="text-brand-accent">Letin Solution.</span>
+                            </h2>
+                            <div className="space-y-8 text-slate-500 text-lg md:text-xl font-light leading-relaxed">
+                                <p>
+                                    Born from a passion for technical integrity, Letin Solution was founded to bridge
+                                    the gap between rapid startup growth and robust enterprise stability.
+                                </p>
+                                <p>
+                                    Today, we are a global partner for businesses that demand more from their technology.
+                                    We don't just deliver projects; we engineer lasting digital legacies.
+                                </p>
+                            </div>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase mb-10 leading-none">
-                            We are <br /> <span className="text-brand-accent">Letin Solution.</span>
-                        </h2>
-                        <div className="space-y-8 text-slate-500 text-lg md:text-xl font-light leading-relaxed">
-                            <p>
-                                Born from a passion for technical integrity, Letin Solution was founded to bridge
-                                the gap between rapid startup growth and robust enterprise stability.
-                            </p>
-                            <p>
-                                Today, we are a global partner for businesses that demand more from their technology.
-                                We don't just deliver projects; we engineer lasting digital legacies.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="relative">
-                        <div className="absolute -inset-10 bg-brand-accent/5 blur-[100px] rounded-full" />
-                        <div className="relative p-1 bg-gradient-to-br from-slate-100 to-transparent rounded-[3rem]">
-                            <div className="bg-white p-12 rounded-[2.9rem] shadow-sm border border-slate-50">
-                                <div className="grid grid-cols-2 gap-12">
-                                    {[
-                                        { label: "Active Countries", val: "12+" },
-                                        { label: "Products Launched", val: "45+" },
-                                        { label: "Lines of Code", val: "2M+" },
-                                        { label: "Engineer Hours", val: "150k+" }
-                                    ].map((stat, i) => (
-                                        <div key={i} className="group">
-                                            <div className="text-brand-accent text-4xl font-black mb-2 group-hover:scale-110 transition-transform origin-left">{stat.val}</div>
-                                            <div className="text-slate-400 text-[10px] uppercase font-bold tracking-widest">{stat.label}</div>
-                                        </div>
-                                    ))}
+                        <div className="relative">
+                            <div className="absolute -inset-10 bg-brand-accent/5 blur-[100px] rounded-full" />
+                            <div className="relative p-1 bg-gradient-to-br from-slate-100 to-transparent rounded-[3rem]">
+                                <div className="bg-white p-12 rounded-[2.9rem] shadow-sm border border-slate-50">
+                                    <div className="grid grid-cols-2 gap-12">
+                                        {[
+                                            { label: "Active Countries", val: "12+" },
+                                            { label: "Products Launched", val: "45+" },
+                                            { label: "Lines of Code", val: "2M+" },
+                                            { label: "Engineer Hours", val: "150k+" }
+                                        ].map((stat, i) => (
+                                            <div key={i} className="group">
+                                                <div className="text-brand-accent text-4xl font-black mb-2 group-hover:scale-110 transition-transform origin-left">{stat.val}</div>
+                                                <div className="text-slate-400 text-[10px] uppercase font-bold tracking-widest">{stat.label}</div>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </section>
 
-            {/* Mission Vision Value Interactive Accordion */}
-            <section className="py-32 bg-slate-950 overflow-hidden relative">
-                <div className="absolute inset-0 bg-grid opacity-5 pointer-events-none" />
-                <div className="container mx-auto px-6 relative z-10">
-                    <div className="flex flex-col lg:flex-row gap-4 h-[600px] lg:h-[700px]">
-                        {values.map((v, i) => (
+            {/* Mission Vision Value - Full Screen Columns */}
+            <section className="w-full h-[600px] md:h-[80vh] bg-slate-950 flex flex-col md:flex-row relative z-20">
+                {values.map((v, i) => (
+                    <motion.div
+                        key={i}
+                        onMouseEnter={() => setHoveredValue(i)}
+                        onMouseLeave={() => setHoveredValue(null)}
+                        animate={{
+                            flex: hoveredValue === i ? 2 : 1,
+                            opacity: hoveredValue !== null && hoveredValue !== i ? 0.6 : 1
+                        }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="relative h-full border-r border-white/10 last:border-r-0 overflow-hidden group cursor-pointer"
+                    >
+                        {/* Background Image */}
+                        <motion.img
+                            src={v.image}
+                            alt={v.title}
+                            animate={{
+                                scale: hoveredValue === i ? 1.1 : 1,
+                            }}
+                            transition={{ duration: 0.8 }}
+                            className="absolute inset-0 w-full h-full object-cover"
+                        />
+
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+
+                        {/* Content */}
+                        <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
                             <motion.div
-                                key={i}
-                                onMouseEnter={() => setHoveredValue(i)}
-                                onMouseLeave={() => setHoveredValue(null)}
-                                animate={{
-                                    flex: hoveredValue === i ? 2.5 : 1,
-                                }}
-                                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                                className="relative rounded-[3rem] overflow-hidden group cursor-pointer border border-white/5"
+                                animate={{ y: hoveredValue === i ? 0 : 0 }}
+                                transition={{ duration: 0.4 }}
                             >
-                                <motion.img
-                                    src={v.image}
-                                    alt={v.title}
+                                <h3 className="text-white text-4xl md:text-7xl font-black uppercase tracking-tighter mb-4">
+                                    {v.title}
+                                </h3>
+
+                                <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
                                     animate={{
-                                        scale: hoveredValue === i ? 1.1 : 1,
-                                        filter: hoveredValue === i ? "grayscale(0%)" : "grayscale(100%)",
-                                        opacity: hoveredValue === i ? 0.6 : 0.3
+                                        height: hoveredValue === i ? 'auto' : 0,
+                                        opacity: hoveredValue === i ? 1 : 0
                                     }}
-                                    transition={{ duration: 0.8 }}
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-
-                                <div className="absolute inset-0 p-12 flex flex-col justify-end">
-                                    <motion.div
-                                        animate={{
-                                            y: hoveredValue === i ? 0 : 20,
-                                            opacity: hoveredValue === i ? 1 : 0.5
-                                        }}
-                                        className="w-fit"
-                                    >
-                                        <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-brand-accent mb-6 border border-white/20">
-                                            {v.icon}
-                                        </div>
-                                        <h3 className="text-white text-4xl lg:text-5xl font-black uppercase tracking-tighter mb-4">
-                                            {v.title}
-                                        </h3>
-                                    </motion.div>
-
-                                    <AnimatePresence>
-                                        {hoveredValue === i && (
-                                            <motion.p
-                                                initial={{ opacity: 0, y: 20 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                exit={{ opacity: 0, y: 10 }}
-                                                transition={{ duration: 0.4, delay: 0.1 }}
-                                                className="text-slate-300 text-lg lg:text-xl font-light leading-relaxed max-w-xl"
-                                            >
-                                                {v.desc}
-                                            </motion.p>
-                                        )}
-                                    </AnimatePresence>
-                                </div>
-
-                                {/* Vertical Line Divider for non-hovered Desktop */}
-                                <div className="absolute right-0 top-1/4 bottom-1/4 w-px bg-white/10 hidden lg:block group-last:hidden" />
+                                    className="overflow-hidden"
+                                >
+                                    <p className="text-slate-200 text-lg font-light leading-relaxed max-w-md">
+                                        {v.desc}
+                                    </p>
+                                </motion.div>
                             </motion.div>
-                        ))}
-                    </div>
-                </div>
+                        </div>
+                    </motion.div>
+                ))}
             </section>
 
             {/* Our Story Section */}
@@ -288,7 +283,7 @@ const AboutPage = () => {
             </section>
 
             {/* Careers CTA - Full Width Display */}
-            <section className="py-32 bg-[#4f46e5] relative overflow-hidden group w-full mt-24">
+            <section className="py-32 bg-slate-900 relative overflow-hidden group w-full mt-24">
                 {/* Background Patterns */}
                 <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
                     <svg className="w-full h-full scale-150 transform translate-x-1/4" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -326,43 +321,48 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            {/* Areas of Expertise */}
-            <section className="py-32 container mx-auto px-6">
-                <div className="text-center mb-32">
-                    <span className="text-brand-accent font-black tracking-[0.4em] text-[10px] uppercase mb-8 block">Domain Mastery</span>
-                    <h2 className="text-slate-900 text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
-                        Our Areas of <br /> <span className="text-brand-accent italic">Expertise.</span>
-                    </h2>
-                </div>
+            {/* Areas of Expertise - Grid Layout */}
+            <section className="py-32 bg-slate-50">
+                <div className="container mx-auto px-6">
+                    <div className="text-center mb-24">
+                        <span className="text-brand-accent font-black tracking-[0.4em] text-[10px] uppercase mb-8 block">Domain Mastery</span>
+                        <h2 className="text-slate-900 text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
+                            Our Areas of <br /> <span className="text-brand-accent italic">Expertise.</span>
+                        </h2>
+                    </div>
 
-                <div className="space-y-24 max-w-6xl mx-auto">
-                    {expertise.map((item, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className={`flex flex-col lg:flex-row gap-16 items-start ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
-                        >
-                            <div className="flex-1">
-                                <h3 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-10 leading-tight">
+                    <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                        {expertise.map((item, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.1 }}
+                                className="bg-white p-12 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 group border border-slate-100"
+                            >
+                                <div className="w-16 h-16 bg-brand-accent/5 rounded-2xl flex items-center justify-center text-brand-accent mb-8 group-hover:scale-110 transition-transform duration-500">
+                                    {idx === 0 && <Target size={32} />}
+                                    {idx === 1 && <Zap size={32} />}
+                                    {idx === 2 && <Globe size={32} />}
+                                </div>
+                                <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight mb-6 group-hover:text-brand-accent transition-colors">
                                     {item.title}
                                 </h3>
-                                <p className="text-slate-500 text-lg md:text-xl font-light leading-relaxed mb-10">
+                                <p className="text-slate-500 font-light leading-relaxed mb-8 min-h-[100px]">
                                     {item.desc}
                                 </p>
-                                <div className="space-y-4">
+                                <ul className="space-y-4 border-t border-slate-100 pt-8">
                                     {item.bullets.map((bullet, i) => (
-                                        <div key={i} className="flex items-center gap-6 group">
-                                            <div className="w-10 h-px bg-slate-200 transition-all group-hover:w-20 group-hover:bg-brand-accent" />
-                                            <span className="text-slate-700 font-medium text-sm uppercase tracking-wide">{bullet}</span>
-                                        </div>
+                                        <li key={i} className="flex items-start gap-3 text-sm font-medium text-slate-600 uppercase tracking-wide">
+                                            <span className="text-brand-accent mt-0.5">•</span>
+                                            {bullet}
+                                        </li>
                                     ))}
-                                </div>
-                            </div>
-                            <div className="flex-1 w-full bg-slate-50 rounded-[4rem] aspect-video animate-pulse-slow border border-slate-100" />
-                        </motion.div>
-                    ))}
+                                </ul>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
