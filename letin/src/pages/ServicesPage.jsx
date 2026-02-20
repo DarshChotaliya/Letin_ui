@@ -983,9 +983,9 @@ const ServicesPage = () => {
                             <button
                                 key={cat}
                                 onClick={() => setFilter(cat)}
-                                className={`px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all duration-500 ${filter === cat
+                                className={`px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all duration-500 ${filter === cat
                                     ? 'bg-slate-950 text-white border-slate-950 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)]'
-                                    : 'bg-white text-slate-400 border-slate-100 hover:border-brand-accent/30 hover:text-slate-900 hover:shadow-xl hover:shadow-slate-100'
+                                    : 'bg-white text-slate-600 border-slate-100 hover:border-brand-accent/30 hover:text-slate-900 hover:shadow-xl hover:shadow-slate-100'
                                     }`}
                             >
                                 {cat === 'All' ? 'Genesis (All)' : cat}
@@ -999,7 +999,7 @@ const ServicesPage = () => {
             <section className="py-24 container mx-auto px-6 max-w-7xl">
                 {filter === 'All' ? (
                     <div className="space-y-24">
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {categoryOverviews.map((overview, idx) => (
                                 <motion.div
                                     key={overview.id}
@@ -1021,11 +1021,11 @@ const ServicesPage = () => {
                                     <h3 className="text-2xl font-black text-slate-900 mb-6 tracking-tight uppercase leading-none group-hover:text-brand-accent transition-colors">
                                         {overview.title}
                                     </h3>
-                                    <p className="text-slate-500 text-sm font-light leading-relaxed mb-8 flex-grow">
+                                    <p className="text-slate-700 text-sm font-medium leading-relaxed mb-8 flex-grow">
                                         {overview.desc}
                                     </p>
 
-                                    <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover:text-slate-900 transition-all">
+                                    <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-slate-600 group-hover:text-slate-900 transition-all">
                                         Examine Strategy <ArrowRight size={14} className="group-hover:translate-x-3 transition-transform duration-500 text-brand-accent" />
                                     </div>
 
@@ -1047,12 +1047,12 @@ const ServicesPage = () => {
                                     exit={{ opacity: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: idx * 0.05 }}
-                                    className="bg-white p-12 md:p-16 flex flex-col items-center text-center group hover:bg-slate-50 transition-all duration-700 relative overflow-hidden"
+                                    className="bg-white p-10 md:p-12 flex flex-col items-center text-center group hover:bg-slate-50 transition-all duration-700 relative overflow-hidden"
                                 >
                                     {/* Background Accent */}
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/5 blur-3xl rounded-full translate-x-16 -translate-y-16 group-hover:bg-brand-accent/10 transition-colors" />
 
-                                    <div className="mb-12 w-full max-w-[180px] h-[100px] transform group-hover:scale-110 transition-transform duration-1000 mx-auto">
+                                    <div className="mb-10 w-full max-w-[140px] h-[80px] transform group-hover:scale-110 transition-transform duration-1000 mx-auto text-slate-800">
                                         {solution.illustration}
                                     </div>
 
@@ -1060,13 +1060,13 @@ const ServicesPage = () => {
                                     <h3 className="text-xl font-black text-slate-900 mb-6 tracking-tight uppercase leading-none group-hover:text-brand-accent transition-colors">
                                         {solution.title}
                                     </h3>
-                                    <p className="text-slate-500 text-sm font-light leading-relaxed mb-12 flex-grow line-clamp-4 group-hover:text-slate-700 transition-colors">
+                                    <p className="text-slate-700 text-sm font-medium leading-relaxed mb-10 flex-grow line-clamp-4 group-hover:text-slate-900 transition-colors">
                                         {solution.desc}
                                     </p>
 
                                     <button
                                         onClick={() => setSelectedSolution(solution)}
-                                        className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover:text-slate-900 transition-all mx-auto"
+                                        className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-slate-600 group-hover:text-slate-900 transition-all mx-auto"
                                     >
                                         Detailed Brief <ArrowRight size={14} className="group-hover:translate-x-3 transition-transform duration-500 text-brand-accent" />
                                     </button>
