@@ -18,7 +18,7 @@ const About = () => {
                         transition={{ duration: 1.2, ease: "easeOut" }}
                     >
                         <span className="text-brand-accent text-[10px] md:text-xs font-black tracking-[0.6em] uppercase mb-8 block">
-                            Meet Letin Solution
+                            Meet LetainAI
                         </span>
 
                         <h2 className="cinematic-heading text-4xl md:text-6xl lg:text-7xl text-slate-900 leading-[1.1] mb-8 uppercase tracking-tighter">
@@ -28,7 +28,7 @@ const About = () => {
 
                         <div className="space-y-6 md:space-y-8 mb-12 md:mb-16">
                             <p className="text-slate-600 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
-                                At Letin Solution, we believe technology should simplify, not complicate. Our mission is to help businesses grow with innovative digital solutions, custom software development, and intelligent automation.
+                                At LetainAI, we believe technology should simplify, not complicate. Our mission is to help businesses grow with innovative digital solutions, custom software development, and intelligent automation.
                             </p>
                             <p className="text-slate-400 text-base md:text-lg font-light leading-relaxed max-w-2xl italic">
                                 From strategy to execution, we blend creativity with technical expertise to deliver scalable, future-ready IT services that drive real business transformation.

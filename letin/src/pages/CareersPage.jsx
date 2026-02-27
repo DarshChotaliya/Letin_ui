@@ -13,7 +13,7 @@ const CareersPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#fbfbfd]">
+        <div className="min-h-screen bg-[#fbfbfd] pb-32">
             {/* Hero Section */}
             <section className="pt-48 pb-32 relative overflow-hidden bg-brand-accent">
                 {/* Background Pattern */}
@@ -56,7 +56,7 @@ const CareersPage = () => {
                             <span className="text-brand-accent italic">Make an Impact.</span>
                         </h2>
                         <p className="text-slate-500 text-xl font-light leading-relaxed mb-12">
-                            We build real products and systems at Letin Solution, from high-performance software
+                            We build real products and systems at LetainAI, from high-performance software
                             platforms to mission-critical AI solutions. You will work in a close-knit team
                             where ownership matters and your work reaches users everywhere.
                         </p>
@@ -88,7 +88,7 @@ const CareersPage = () => {
                         className="text-center mb-24"
                     >
                         <h2 className="text-slate-900 text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">
-                            Life at Letin Solution
+                            Life at LetainAI
                         </h2>
                         <p className="text-slate-400 text-lg font-light max-w-2xl mx-auto">
                             We are building a culture where people grow by doing meaningful work.
@@ -121,7 +121,7 @@ const CareersPage = () => {
             </section>
 
             {/* Application CTA */}
-            <section className="py-24 container mx-auto px-6 mb-32">
+            <section className="py-24 container mx-auto px-6">
                 <div className="bg-slate-950 rounded-[5rem] p-12 md:p-32 relative overflow-hidden flex flex-col items-center text-center shadow-2xl">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.15)_0,transparent_70%)]" />
 

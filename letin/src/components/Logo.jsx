@@ -39,7 +39,7 @@ const Logo = ({ className = "h-8", isDark = false }) => {
                 </motion.svg>
             </div>
             <span className={`font-jakarta font-black text-2xl tracking-[0.2em] ${isDark ? 'text-white' : 'text-slate-800'}`}>
-                LETIN
+                LETAINAI
             </span>
         </div>
     );

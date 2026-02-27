@@ -74,7 +74,7 @@ const Process = () => {
                                 Operational Alpha
                             </span>
                             <h2 className="cinematic-heading text-4xl md:text-6xl lg:text-5xl xl:text-6xl text-slate-900 leading-[1.05] tracking-tight uppercase">
-                                The Letin <br />
+                                The LetainAI <br />
                                 <span className="text-brand-accent">Methodology.</span>
                             </h2>
                             <p className="text-slate-500 text-base md:text-xl font-light leading-relaxed max-w-lg">

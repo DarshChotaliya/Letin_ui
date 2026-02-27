@@ -30,7 +30,7 @@ const Footer = () => {
                     <div className="lg:col-span-2 lg:ml-auto">
                         <h4 className="font-jakarta font-black text-xs uppercase tracking-[.3em] text-slate-900 mb-10">Company</h4>
                         <ul className="space-y-5">
-                            {[{ label: 'About Us', to: '/about' }, { label: 'Services', to: '/services' }, { label: 'Portfolio', to: '/portfolio' }, { label: 'Careers', to: '/careers' }, { label: 'Blog', to: '/blog' }, { label: 'Contact', to: '/contact' }].map((link) => (
+                            {[{ label: 'About Us', to: '/about' }, { label: 'Services', to: '/services' }, { label: 'Careers', to: '/careers' }, { label: 'Contact', to: '/contact' }].map((link) => (
                                 <li key={link.label}>
                                     <Link to={link.to} className="text-slate-500 hover:text-brand-accent transition-all duration-300 text-sm flex items-center gap-3 group">
                                         <span className="w-1.5 h-1.5 rounded-full bg-slate-200 transition-all group-hover:bg-brand-accent group-hover:scale-125" />
@@ -62,7 +62,7 @@ const Footer = () => {
                         <div className="space-y-8">
                             <div>
                                 <p className="text-slate-400 text-[10px] uppercase font-bold tracking-widest mb-2">Email</p>
-                                <p className="text-slate-700 font-bold text-sm hover:text-brand-accent cursor-pointer transition-colors">info@letinAI.com</p>
+                                <p className="text-slate-700 font-bold text-sm hover:text-brand-accent cursor-pointer transition-colors">info@letainai.com</p>
                             </div>
                             <div>
                                 <p className="text-slate-400 text-[10px] uppercase font-bold tracking-widest mb-2">Phone</p>
@@ -82,7 +82,7 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="border-t border-slate-200 pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
                     <p className="text-slate-400 text-xs tracking-widest font-bold uppercase">
-                        © {new Date().getFullYear()} Letin Solution. All rights reserved.
+                        © {new Date().getFullYear()} LetainAI. All rights reserved.
                     </p>
                     <div className="flex gap-10">
                         {['Privacy', 'Terms', 'Security'].map((link) => (

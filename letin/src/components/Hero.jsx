@@ -15,7 +15,7 @@ const slides = [
     {
         id: "core",
         title: "Technology That Transforms Solutions That Scale",
-        subtitle: "LETIN SOLUTION",
+        subtitle: "LETAINAI",
         highlight: "We engineer industrial-grade digital ecosystems that empower global enterprises to innovate with speed and security.",
         cta: "Start Your Project",
         stats: [

@@ -67,69 +67,6 @@ const allSolutions = [
         )
     },
 
-    // ERP Services
-    {
-        id: 'odoo-migration',
-        category: 'ERP Services',
-        title: "Odoo Migration",
-        desc: "Seamless migration of business data, modules, and configurations to modern Odoo environments with zero disruption and enhanced performance.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="70" cy="60" r="20" opacity="0.5" />
-                <circle cx="130" cy="60" r="20" />
-                <path d="M90 60h20" markerEnd="url(#arrow)" />
-            </svg>
-        )
-    },
-    {
-        id: 'odoo-customization',
-        category: 'ERP Services (Odoo)',
-        title: "Odoo Customization",
-        desc: "Custom Odoo ERP enhancements aligned with your workflows, including automation, module modification, and third-party integrations.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="60" y="30" width="80" height="60" rx="4" />
-                <path d="M80 50l10 10 20-20" />
-            </svg>
-        )
-    },
-    {
-        id: 'odoo-development',
-        category: 'ERP Services (Odoo)',
-        title: "Odoo Development",
-        desc: "End-to-end Odoo ERP development using Python for module creation, workflow automation, and business-specific functionality.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M40 30h120v60H40zM60 50h80M60 70h40" />
-            </svg>
-        )
-    },
-    {
-        id: 'odoo-integration',
-        category: 'ERP Services (Odoo)',
-        title: "Odoo Integration",
-        desc: "Connect Odoo with CRM, eCommerce, and third-party systems to enable real-time synchronization and unified business operations.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="60" cy="60" r="15" />
-                <circle cx="140" cy="60" r="15" />
-                <path d="M75 60h50M75 55h50M75 65h50" />
-            </svg>
-        )
-    },
-    {
-        id: 'odoo-implementation',
-        category: 'ERP Services (Odoo)',
-        title: "Odoo Implementation",
-        desc: "Strategic ERP implementation including system configuration, data migration, and full deployment tailored to your operational goals.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M40 100l60-80 60 80H40z" />
-                <path d="M100 20v80M70 60h60" />
-            </svg>
-        )
-    },
-
     // Artificial Intelligence & Machine Learning
     {
         id: 'ai-model-dev',
@@ -311,152 +248,6 @@ const allSolutions = [
                 <rect x="40" y="30" width="120" height="60" rx="10" />
                 <circle cx="70" cy="50" r="5" fill="currentColor" />
                 <path d="M70 70h60" />
-            </svg>
-        )
-    },
-    {
-        id: 'rapid-mvp',
-        category: 'MVP Development',
-        title: "Rapid MVP Development",
-        desc: "Accelerated product development focusing on essential features for faster go-to-market.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M40 60h60l20-40 20 80 20-40h40" />
-            </svg>
-        )
-    },
-    {
-        id: 'mvp-seo',
-        category: 'MVP Development',
-        title: "MVP SEO & Launch Readiness",
-        desc: "Prepare MVPs for market launch with SEO planning, analytics setup, and operational readiness.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="80" cy="50" r="30" />
-                <path d="M100 70l30 30" />
-            </svg>
-        )
-    },
-    {
-        id: 'mvp-scaling',
-        category: 'MVP Development',
-        title: "MVP Scaling Support",
-        desc: "Technical and strategic guidance to scale validated products while maintaining architectural stability.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M40 100v-20h30v-20h30v-20h30v-20h30" />
-            </svg>
-        )
-    },
-
-    // Generative AI
-    {
-        id: 'llm-tuning',
-        category: 'Generative AI',
-        title: "Custom LLM Fine-Tuning",
-        desc: "Domain-specific LLM customization for enhanced accuracy, contextual relevance, and business alignment.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M60 60a40 40 0 1 1 80 0 40 40 0 1 1-80 0" />
-                <path d="M100 40v40M80 60h40" />
-            </svg>
-        )
-    },
-    {
-        id: 'genai-assessment',
-        category: 'Generative AI Services',
-        title: "GenAI Readiness Assessment",
-        desc: "Evaluate infrastructure, data maturity, and business readiness for successful generative AI adoption.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="100" cy="60" r="40" strokeDasharray="4 4" />
-                <path d="M100 45v30M85 60h30" />
-            </svg>
-        )
-    },
-    {
-        id: 'genai-integration',
-        category: 'Generative AI Services',
-        title: "GenAI Integration",
-        desc: "Integrate generative AI models into business workflows to enable real-time, context-aware automation.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="50" y="30" width="100" height="60" rx="10" />
-                <path d="M70 60h60M100 45v30" className="animate-pulse" />
-            </svg>
-        )
-    },
-    {
-        id: 'rag-implementation',
-        category: 'Generative AI Services',
-        title: "Enterprise RAG Implementation",
-        desc: "Secure Retrieval-Augmented Generation systems combining proprietary data with LLMs for accurate enterprise insights.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M40 40h120M40 80h120M100 20v80" />
-                <circle cx="100" cy="60" r="10" fill="currentColor" />
-            </svg>
-        )
-    },
-    {
-        id: 'ai-agents',
-        category: 'Generative AI Services',
-        title: "AI Agent & Copilot Development",
-        desc: "Build intelligent AI assistants and autonomous agents to streamline workflows and boost productivity.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M80 40c10-10 30-10 40 0s10 30 0 40-30 10-40 0-10-30 0-40" />
-                <circle cx="100" cy="100" r="5" fill="currentColor" />
-            </svg>
-        )
-    },
-
-    // Software Testing
-    {
-        id: 'test-automation',
-        category: 'Software Testing',
-        title: "Intelligent Test Automation",
-        desc: "AI-driven automated testing frameworks that reduce manual effort and accelerate release cycles.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M40 60l30 30 90-90" />
-                <circle cx="100" cy="60" r="40" strokeDasharray="2 2" />
-            </svg>
-        )
-    },
-    {
-        id: 'performance-engineering',
-        category: 'Software Testing',
-        title: "Performance & Reliability Engineering",
-        desc: "Ensure system scalability, uptime, and reliability using monitoring, automation, and SRE principles.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M40 100a60 60 0 0 1 120 0" />
-                <path d="M100 100V40" />
-            </svg>
-        )
-    },
-    {
-        id: 'manual-testing',
-        category: 'Software Testing',
-        title: "Manual Testing",
-        desc: "Comprehensive functional and regression testing to validate stability and user experience.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M60 40h80v60H60z" />
-                <path d="M80 60l10 10 20-20" />
-            </svg>
-        )
-    },
-    {
-        id: 'automation-testing-service',
-        category: 'Software Testing',
-        title: "Automation Testing",
-        desc: "Script-based testing frameworks for consistent validation and improved software quality assurance.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M40 40l40 40 80-80" />
-                <rect x="40" y="80" width="120" height="20" rx="4" />
             </svg>
         )
     },
@@ -663,94 +454,17 @@ const allSolutions = [
         )
     },
 
-    // Cloud And Infrastructure Services
-    {
-        id: 'devops-automation',
-        category: 'Cloud And Infrastructure Services',
-        title: "DevOps & Cloud Automation",
-        desc: "Streamline development and operations through CI/CD pipelines and infrastructure automation.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M60 60c0-20 40-20 40 0s40 20 40 0" />
-                <path d="M140 60c0 20-40 20-40 0s-40-20-40 0" />
-            </svg>
-        )
-    },
-    {
-        id: 'cloud-strategy',
-        category: 'Cloud & Infrastructure Services',
-        title: "Cloud Strategy & Readiness Assessment",
-        desc: "Assess cloud maturity and build strategic migration roadmaps aligned with business goals.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="100" cy="60" r="40" strokeDasharray="4 2" />
-                <path d="M100 35v50M75 60h50" />
-            </svg>
-        )
-    },
-    {
-        id: 'cloud-architecture',
-        category: 'Cloud & Infrastructure Services',
-        title: "Cloud Architecture & Infrastructure Setup",
-        desc: "Design scalable, secure, and high-performance cloud environments.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M40 80c0-20 20-30 40-30s40 10 40 30" />
-                <path d="M80 80c0-20 20-30 40-30s40 10 40 30" />
-            </svg>
-        )
-    },
-    {
-        id: 'cloud-migration',
-        category: 'Cloud & Infrastructure Services',
-        title: "Cloud Migration Services",
-        desc: "Secure migration of infrastructure and applications to cloud platforms with minimal disruption.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M60 80h80M100 80V40" />
-                <path d="M85 55l15-15 15 15" />
-            </svg>
-        )
-    },
-    {
-        id: 'cloud-infra-mgmt',
-        category: 'Cloud & Infrastructure Services',
-        title: "Cloud Infrastructure Management",
-        desc: "End-to-end cloud monitoring, optimization, and operational management.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="50" y="30" width="100" height="60" rx="4" />
-                <path d="M70 50h60M70 70h40" />
-            </svg>
-        )
-    },
-    {
-        id: 'cloud-optimization',
-        category: 'Cloud & Infrastructure Services',
-        title: "Cloud Optimization & Cost Control",
-        desc: "Right-sizing, cost governance, and performance tuning to maximize cloud ROI.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M100 20v80M60 60l40-40 40 40" strokeDasharray="4 4" />
-                <circle cx="100" cy="60" r="10" fill="currentColor" />
-            </svg>
-        )
-    }
 ];
 
 const categories = [
     'All',
     'CMS Development',
-    'ERP Services',
     'Artificial Intelligence & Machine Learning',
     'Automation & Integration',
     'MVP Development',
-    'Generative AI',
-    'Software Testing',
     'Mobile Application Development',
     'Managed IT Services',
-    'Enterprise Software Development',
-    'Cloud And Infrastructure Services'
+    'Enterprise Software Development'
 ];
 
 const categoryOverviews = [
@@ -758,7 +472,7 @@ const categoryOverviews = [
         id: 'cms-overview',
         category: 'CMS Development',
         title: "CMS Development",
-        desc: "Build better with Letin Solution. We deliver flexible Headless CMS solutions for seamless omnichannel publishing, high data integrity, and smarter workflows.",
+        desc: "Build better with LetainAI. We deliver flexible Headless CMS solutions for seamless omnichannel publishing, high data integrity, and smarter workflows.",
         illustration: (
             <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <rect x="40" y="20" width="120" height="80" rx="8" />
@@ -769,23 +483,10 @@ const categoryOverviews = [
         )
     },
     {
-        id: 'erp-overview',
-        category: 'ERP Services',
-        title: "ERP Services",
-        desc: "Letin Solution provides ERP Services for integrated business management. We offer Odoo implementation, customization, and support to unify data, streamline workflows, and ensure stability.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="70" cy="60" r="20" opacity="0.5" />
-                <circle cx="130" cy="60" r="20" />
-                <path d="M90 60h20" />
-            </svg>
-        )
-    },
-    {
         id: 'ai-ml-overview',
         category: 'Artificial Intelligence & Machine Learning',
         title: "Artificial Intelligence & Machine Learning",
-        desc: "Artificial Intelligence & Machine Learning systems mimic human intelligence for tasks like decision-making and pattern recognition. Letin Solution provides AI solutions for business, enabling predictive modeling and automation in operations.",
+        desc: "Artificial Intelligence & Machine Learning systems mimic human intelligence for tasks like decision-making and pattern recognition. LetainAI provides AI solutions for business, enabling predictive modeling and automation in operations.",
         illustration: (
             <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <circle cx="100" cy="60" r="30" />
@@ -811,7 +512,7 @@ const categoryOverviews = [
         id: 'mvp-overview',
         category: 'MVP Development',
         title: "MVP Development",
-        desc: "Letin Solution MVP development focuses on building core product features for initial user testing. This approach supports rapid market release and data collection for product-market fit. It enables efficient idea validation and iteration based on user feedback, minimizing resource expenditure.",
+        desc: "LetainAI MVP development focuses on building core product features for initial user testing. This approach supports rapid market release and data collection for product-market fit. It enables efficient idea validation and iteration based on user feedback, minimizing resource expenditure.",
         illustration: (
             <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M40 100l60-80 60 80H40z" />
@@ -820,35 +521,10 @@ const categoryOverviews = [
         )
     },
     {
-        id: 'gen-ai-overview',
-        category: 'Generative AI',
-        title: "Generative AI",
-        desc: "Generative AI transforms complex data into actionable outputs. We provide custom LLM development to automate content creation and improve decision-making. Our solutions drive efficiency across business functions, including LLM fine-tuning for enterprises.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M60 40h80v40H60z" />
-                <path d="M80 30v10M120 30v10M80 80v10M120 80v10" />
-                <circle cx="100" cy="60" r="5" fill="currentColor" />
-            </svg>
-        )
-    },
-    {
-        id: 'testing-overview',
-        category: 'Software Testing',
-        title: "Software Testing",
-        desc: "Software Testing verifies application functionality, meeting requirements, and defect identification. Letin Solution provides comprehensive Test Automation to ensure product reliability and user satisfaction. This systematic Quality Assurance process supports business objectives.",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="50" y="30" width="100" height="60" rx="8" />
-                <path d="M80 60l15 15 30-30" />
-            </svg>
-        )
-    },
-    {
         id: 'mobile-overview',
         category: 'Mobile Application Development',
         title: "Mobile Application Development",
-        desc: "Letin Solution offers Mobile Application Development, designing, coding, testing, and deploying custom mobile apps for iOS and Android. We focus on operational outcomes, streamlining processes, and enhancing customer engagement through secure, scalable solutions.",
+        desc: "LetainAI offers Mobile Application Development, designing, coding, testing, and deploying custom mobile apps for iOS and Android. We focus on operational outcomes, streamlining processes, and enhancing customer engagement through secure, scalable solutions.",
         illustration: (
             <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <rect x="70" y="20" width="60" height="80" rx="10" />
@@ -860,7 +536,7 @@ const categoryOverviews = [
         id: 'managed-it-overview',
         category: 'Managed IT Services',
         title: "Managed IT Services",
-        desc: "Letin Solution Managed IT Services delivers continuous oversight for technology infrastructure. This proactive approach prevents operational disruptions and aligns IT support with business objectives. We cover network monitoring, cybersecurity, data backups, and software updates, ensuring...",
+        desc: "LetainAI Managed IT Services delivers continuous oversight for technology infrastructure. This proactive approach prevents operational disruptions and aligns IT support with business objectives. We cover network monitoring, cybersecurity, data backups, and software updates, ensuring...",
         illustration: (
             <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M40 80h120M60 60h80M80 40h40" />
@@ -880,17 +556,6 @@ const categoryOverviews = [
             </svg>
         )
     },
-    {
-        id: 'cloud-overview',
-        category: 'Cloud And Infrastructure Services',
-        title: "Cloud And Infrastructure Services",
-        desc: "Letin Solution provides cloud and infrastructure solutions, offering on-demand access to virtualized hardware and software resources. We focus on Cloud optimization to ensure operational stability and cost efficiency. Our services include comprehensive Cloud management...",
-        illustration: (
-            <svg viewBox="0 0 200 120" className="w-full h-auto text-slate-900" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M70 80c-20 0-30-15-30-30s15-30 30-30c5-15 20-20 30-20s25 5 30 20c15 0 30 15 30 30s-15 30-30 30H70z" />
-            </svg>
-        )
-    }
 ];
 
 const ServicesPage = () => {

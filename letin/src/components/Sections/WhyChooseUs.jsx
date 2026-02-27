@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
                                 <span className="text-brand-accent">Superiority.</span>
                             </h2>
                             <p className="text-slate-400 text-xl md:text-2xl font-light leading-relaxed max-w-2xl">
-                                Letin bridges the critical void between complex enterprise requirements and
+                                LetainAI bridges the critical void between complex enterprise requirements and
                                 frictionless, elite-tier digital performance.
                             </p>
                         </motion.div>

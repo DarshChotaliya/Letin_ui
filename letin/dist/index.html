@@ -4,16 +4,36 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Letvar Solution — Enterprise AI, Cloud Infrastructure, Cyber Resilience, and Custom Software Engineering. Building industrial-grade digital ecosystems for global enterprises." />
-  <title>Letvar Solution — Technology That Transforms</title>
-  <script type="module" crossorigin src="/assets/index-Pn983lxU.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-mmJWKbop.css">
+    content="LetainAI — Enterprise AI, Cloud Infrastructure, Cyber Resilience, and Custom Software Engineering. Building industrial-grade digital ecosystems for global enterprises." />
+  <title>LetainAI — Technology That Transforms</title>
+  <script type="module" crossorigin src="/assets/index-DzdqX_UT.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BeLUNoSS.css">
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root"></div>
+  <script>
+    // Suppress external browser extension errors (MetaMask, etc.) to keep console clean
+    window.addEventListener('error', (e) => {
+      if (e.message?.includes('MetaMask') || e.filename?.includes('inpage.js')) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+      }
+    });
+    window.addEventListener('unhandledrejection', (e) => {
+      if (e.reason?.message?.includes('MetaMask') || e.reason?.stack?.includes('inpage.js')) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+      }
+    });
+  </script>
 </body>
 
 </html>

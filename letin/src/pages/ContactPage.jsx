@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, ChevronDown, Send } from 'lucide-react';
 
 const contactInfo = [
-    { icon: <Mail size={24} />, title: "Email Us", detail: "info@letinAI.com", sub: "Response within 24 hours" },
+    { icon: <Mail size={24} />, title: "Email Us", detail: "info@letainai.com", sub: "Response within 24 hours" },
     { icon: <Phone size={24} />, title: "Call Us", detail: <>{"+91 9023671902"}<br />{"+91 9327182951"}</>, sub: "Mon – Fri, 10AM – 7PM" },
     { icon: <MapPin size={24} />, title: "Visit Us", detail: "GANESH GLORY, 11, Jagatpur Rd", sub: "Ahmedabad, Gujarat 382470" },
 ];

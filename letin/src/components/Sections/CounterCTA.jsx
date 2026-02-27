@@ -102,7 +102,7 @@ const CounterCTA = () => {
                                     <div className="flex items-center gap-4">
                                         <Mail className="text-brand-accent group-hover:scale-110 transition-transform" />
                                         <span className="text-xl md:text-2xl font-jakarta font-bold text-slate-900 group-hover:text-brand-accent transition-colors">
-                                            communication@letin.tech
+                                            communication@letainai.com
                                         </span>
                                     </div>
                                 </div>

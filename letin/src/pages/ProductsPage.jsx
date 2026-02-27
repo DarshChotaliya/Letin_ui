@@ -14,7 +14,7 @@ const products = [
     },
     {
         id: 'letin-pos',
-        title: "Letin Omni-Retail POS",
+        title: "LetainAI Omni-Retail POS",
         subtitle: "Retail Reinvented",
         desc: "A powerful, unified commerce solution that connects your physical and digital storefronts. Real-time inventory sync, advanced customer analytics, and seamless payment processing.",
         icon: <Smartphone size={24} />,

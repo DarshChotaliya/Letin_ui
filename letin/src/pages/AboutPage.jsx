@@ -6,23 +6,6 @@ import {
 } from 'lucide-react';
 import Logo from '../components/Logo';
 
-const founders = [
-    {
-        name: "Abhishek Mevada",
-        role: "Founder & CEO",
-        desc: "Leading the vision and strategic direction of Letin Solution. Abhishek brings a wealth of experience in enterprise architecture and digital transformation.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
-        social: { twitter: "#", linkedin: "#", github: "#" }
-    },
-    {
-        name: "Darshit Mevada",
-        role: "Co-Founder & CTO",
-        desc: "Engineering lead focused on technical excellence and next-generation product development. Darshit oversees our R&D and core infrastructure.",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800",
-        social: { twitter: "#", linkedin: "#", github: "#" }
-    }
-];
-
 const values = [
     {
         title: "Mission",
@@ -78,7 +61,7 @@ const AboutPage = () => {
     const [hoveredValue, setHoveredValue] = React.useState(0);
 
     return (
-        <div className="min-h-screen bg-[#fbfbfd]">
+        <div className="min-h-screen bg-[#fbfbfd] pb-32">
             {/* Hero Section */}
             <section className="pt-48 pb-24 relative overflow-hidden bg-white border-b border-slate-100">
                 <div className="container mx-auto px-6 relative z-10 mb-16 flex flex-col items-center text-center">
@@ -108,7 +91,7 @@ const AboutPage = () => {
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 1.5, ease: "easeOut" }}
                         src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000"
-                        alt="Letin Office"
+                        alt="LetainAI Office"
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[1500ms]"
                     />
                     <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-all duration-1000 pointer-events-none" />
@@ -131,11 +114,11 @@ const AboutPage = () => {
                                 <span className="text-slate-400 font-black tracking-widest text-xs uppercase">Since 2021</span>
                             </div>
                             <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase mb-10 leading-none">
-                                We are <br /> <span className="text-brand-accent">Letin Solution.</span>
+                                We are <br /> <span className="text-brand-accent">LetainAI.</span>
                             </h2>
                             <div className="space-y-8 text-slate-500 text-lg md:text-xl font-light leading-relaxed">
                                 <p>
-                                    Born from a passion for technical integrity, Letin Solution was founded to bridge
+                                    Born from a passion for technical integrity, LetainAI was founded to bridge
                                     the gap between rapid startup growth and robust enterprise stability.
                                 </p>
                                 <p>
@@ -225,7 +208,7 @@ const AboutPage = () => {
             </section>
 
             {/* Our Story Section */}
-            <section className="py-32 container mx-auto px-6">
+            <section className="py-32 container mx-auto px-6 border-b border-slate-100">
                 <div className="max-w-4xl mx-auto text-center">
                     <span className="text-brand-accent font-black tracking-[0.4em] text-[10px] uppercase mb-12 block">The Narrative</span>
                     <h2 className="text-slate-900 text-5xl md:text-7xl font-black tracking-tighter uppercase mb-12 leading-none">
@@ -242,42 +225,6 @@ const AboutPage = () => {
                             perfecting internal frameworks that allow us to build twice as fast without
                             compromising on security or quality.
                         </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Founders Section */}
-            <section className="py-32 bg-white border-y border-slate-100">
-                <div className="container mx-auto px-6">
-                    <div className="text-center mb-24">
-                        <h2 className="text-slate-900 text-4xl md:text-6xl font-black tracking-tighter uppercase">
-                            Meet Our <span className="text-brand-accent italic">Leadership.</span>
-                        </h2>
-                    </div>
-                    <div className="grid md:grid-cols-2 gap-8 lg:gap-16 max-w-6xl mx-auto">
-                        {founders.map((person, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                className="group relative"
-                            >
-                                <div className="relative rounded-[4rem] overflow-hidden mb-8 h-80 lg:h-[500px]">
-                                    <img src={person.image} alt={person.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" />
-                                    <div className="absolute inset-x-0 bottom-0 p-12 bg-gradient-to-t from-slate-900 via-transparent to-transparent flex gap-6 justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                                        <a href={person.social.twitter} className="text-white hover:text-brand-accent transition-colors"><Twitter size={20} /></a>
-                                        <a href={person.social.linkedin} className="text-white hover:text-brand-accent transition-colors"><Linkedin size={20} /></a>
-                                        <a href={person.social.github} className="text-white hover:text-brand-accent transition-colors"><Github size={20} /></a>
-                                    </div>
-                                </div>
-                                <div className="text-center">
-                                    <h3 className="text-2xl font-black text-slate-900 uppercase mb-2 group-hover:text-brand-accent transition-colors">{person.name}</h3>
-                                    <p className="text-brand-accent font-black tracking-widest text-[9px] uppercase mb-6">{person.role}</p>
-                                    <p className="text-slate-500 font-light leading-relaxed max-w-sm mx-auto">{person.desc}</p>
-                                </div>
-                            </motion.div>
-                        ))}
                     </div>
                 </div>
             </section>
@@ -367,7 +314,7 @@ const AboutPage = () => {
             </section>
 
             {/* Global Map CTA */}
-            <section className="py-32 container mx-auto px-6 mb-32">
+            <section className="py-32 container mx-auto px-6">
                 <div className="bg-slate-950 rounded-[5rem] p-12 md:p-32 relative overflow-hidden flex flex-col items-center text-center shadow-2xl">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.1)_0,transparent_70%)]" />
 

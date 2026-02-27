@@ -1,10 +1,8 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import LogoSlider from '../components/Sections/LogoSlider';
-import Services from '../components/Sections/Services';
 import WhyChooseUs from '../components/Sections/WhyChooseUs';
 import Process from '../components/Sections/Process';
-import Portfolio from '../components/Sections/Portfolio';
 import Testimonials from '../components/Sections/Testimonials';
 
 const HomePage = () => {
@@ -20,14 +18,8 @@ const HomePage = () => {
             {/* Value Proposition */}
             <WhyChooseUs />
 
-            {/* Core Offerings */}
-            <Services />
-
             {/* Methodology */}
             <Process />
-
-            {/* Recent Work */}
-            <Portfolio />
 
             {/* Client Success */}
             <Testimonials />
